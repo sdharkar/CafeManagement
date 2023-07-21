@@ -1,0 +1,5 @@
+package com.manu.management.repository;
+
+public interface ManuItemRepository {
+
+}

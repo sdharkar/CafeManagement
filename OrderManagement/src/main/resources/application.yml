@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://order:kMfIBAjbTVlcQUyq@cluster0.pwb8wmv.mongodb.net/?retryWrites=true&w=majority
+      database: orders

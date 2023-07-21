@@ -1,0 +1,6 @@
+package com.payment.management.controller;
+
+
+public class PaymentController {
+
+}

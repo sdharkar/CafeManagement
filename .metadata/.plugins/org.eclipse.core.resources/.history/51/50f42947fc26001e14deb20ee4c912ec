@@ -1,0 +1,5 @@
+# Server port
+server.port=9610
+
+#MongoDB connection
+#spring.data.mongodb.uri=mongodb+srv://projectcms:cz62QTsqSRjy9ae9@cluster0.eifkvio.mongodb.net/?retryWrites=true&w=majority

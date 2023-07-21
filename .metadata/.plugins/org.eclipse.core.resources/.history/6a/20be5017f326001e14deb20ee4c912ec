@@ -1,0 +1,8 @@
+package com.manu.management.model;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="manuItem")
+public class ManuItem {
+
+}

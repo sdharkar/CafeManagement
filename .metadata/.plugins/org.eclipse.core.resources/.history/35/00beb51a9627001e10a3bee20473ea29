@@ -1,0 +1,5 @@
+package com.user.management.controller;
+
+public class UserController {
+
+}
