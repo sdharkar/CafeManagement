@@ -1,0 +1,16 @@
+<!-- menu.component.html -->
+<div class="container">
+    <h2 class="mb-4">Cafe Menu</h2>
+    <div *ngIf="menuItems.length > 0; else noItemsMessage">
+      <div *ngFor="let item of menuItems" class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">{{ item.description }}</p>
+            <p class="card-text">Price: {{ item.price }}</p>
+        </div>
+        </div>
+    </div>
+    <ng-template #noItemsMessage>
+        <p>No menu items available at the moment.</p>
+    </ng-template>
+</div>
