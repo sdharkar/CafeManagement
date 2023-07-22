@@ -1,0 +1,47 @@
+server:
+  port: 9600
+  
+spring:
+  application:
+    name: Api-Gateway
+    
+  cloud:
+    gateway:
+      routes:
+      - id: USER-SERVICE
+        uri: http://localhost:9614
+        predicates:
+        - Paths=/api/user/**
+        
+      - id: MENUITEM-SERVICE
+        uri: http://localhost:9610
+        predicates:
+        - Paths=/api/menu/items/**  
+        
+      - id: INVENTORY-SERVICE
+        uri: http://localhost:9612
+        predicates:
+        - Paths=/api/inventory/item/**
+        
+      - id: ORDER-SERVICE
+        uri: http://localhost:9611
+        predicates:
+        - Paths=/api/orders/**
+        
+      - id: PAYMENT-SERVICE
+        uri: http://localhost:9613
+        predicates:
+        - Paths=/api/payment/**
+          
+    
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761
+      
+      
+    
