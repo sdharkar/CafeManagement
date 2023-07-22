@@ -7,6 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MenuComponent } from './menu/menu.component';
+import { OrderComponent } from './order/order.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { MenuComponent } from './menu/menu.component';
     HeaderComponent,
     FooterComponent,
     HomePageComponent,
-    MenuComponent
+    MenuComponent,
+    OrderComponent,
+    UserProfileComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
