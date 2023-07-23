@@ -18,7 +18,7 @@ public class User {
     private String name;
     private String email;
     private String password;
-    private String category;
+    private String role;
     
     
 	
@@ -47,10 +47,10 @@ public class User {
 		this.password = password;
 	}
 	public String getCategory() {
-		return category;
+		return role;
 	}
 	public void setCategory(String category) {
-		this.category = category;
+		this.role = category;
 	}
 
 
@@ -61,13 +61,13 @@ public class User {
 
 
 
-	public User(String id, String name, String email, String password, String category) {
+	public User(String id, String name, String email, String password, String role) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		this.category = category;
+		this.role = role;
 	}
 	
 	
