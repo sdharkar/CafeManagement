@@ -18,7 +18,8 @@ public class ManuItem {
 	private String name;
 	private String description;
 	private double price;
-	
+	private String category;
+	private Boolean available;
 	
 	public String getId() {
 		return id;
@@ -44,16 +45,35 @@ public class ManuItem {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-		
-	public ManuItem() {
-
+	public String getCategory() {
+		return category;
 	}
-	public ManuItem(String id, String name, String description, double price) {
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public Boolean getAvailable() {
+		return available;
+	}
+	public void setAvailable(Boolean available) {
+		this.available = available;
+	}
+	
+	public ManuItem() {
+		
+	}
+	
+	public ManuItem(String id, String name, String description, double price, String category, Boolean available) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
+		this.category = category;
+		this.available = available;
 	}
 	
+	
+	
+	
+		
 }

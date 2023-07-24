@@ -1,16 +1,32 @@
 <!-- menu.component.html -->
 <div class="container">
-    <h2 class="mb-4">Cafe Menu</h2>
-    <div *ngIf="menuItems.length > 0; else noItemsMessage">
-      <div *ngFor="let item of menuItems" class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">{{ item.name }}</h5>
-            <p class="card-text">{{ item.description }}</p>
-            <p class="card-text">Price: {{ item.price }}</p>
-        </div>
-        </div>
+<h2 class="mb-4">Cafe Menu</h2>
+
+    <!-- Search Box -->
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search Menu Items" />
+    </div><br><br>
+
+    <!-- Category Select 
+    <div class="form-group">
+        <select class="form-control" [(ngModel)]="selectedCategory" (change)="filterMenuItems()">
+        <option value="">All Categories</option>
+        <option *ngFor="let category of menuCategories" [value]="category">{{ category }}</option>
+        </select>
     </div>
-    <ng-template #noItemsMessage>
-        <p>No menu items available at the moment.</p>
-    </ng-template>
+-->
+
+
+<div class="menu-container">
+    <h1>Menu</h1>
+    <div class="menu-list">
+      <div *ngFor="let menuItem of menuItems" class="menu-item">
+        <h2>{{ menuItem.name }}</h2>
+        <p>{{ menuItem.description }}</p>
+        <p>Price: ${{ menuItem.price.toFixed(2) }}</p>
+        <p>Category: {{ menuItem.category }}</p>
+        <p *ngIf="menuItem.available">Available</p>
+        <p *ngIf="!menuItem.available">Not Available</p>
+    </div>
+    </div>
 </div>
