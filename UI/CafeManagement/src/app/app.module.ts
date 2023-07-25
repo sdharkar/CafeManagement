@@ -13,6 +13,13 @@ import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { DashboardHeaderComponent } from './dashboard/dashboard-header/dashboard-header.component';
 import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { MenuService } from './service/menu.service';
+import { InventoryService } from './service/inventory.service';
+import { OrderService } from './service/order.service';
+import { PaymentService } from './service/payment.service';
+import { UserService } from './service/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,9 +37,17 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    MenuService,
+    InventoryService,
+    OrderService,
+    PaymentService,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
