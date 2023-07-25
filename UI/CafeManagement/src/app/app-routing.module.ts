@@ -4,7 +4,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MenuComponent } from './menu/menu.component';
 import { OrderComponent } from './order/order.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
