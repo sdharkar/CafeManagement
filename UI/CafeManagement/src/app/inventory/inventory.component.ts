@@ -17,10 +17,6 @@ export class InventoryComponent implements OnInit{
     this.loadInventoryItems();
   }
 
-  onSubmit(){
-
-  }
-
   loadInventoryItems(): void {
     this.inventoryService.getInventoryItem().subscribe(
       items => {
@@ -42,6 +38,11 @@ export class InventoryComponent implements OnInit{
         console.error('Error creating inventory item:', error);
       }
     );
+  }
+
+  //Submit button action 
+  onSubmit(){
+    console.log(this.inventoryItems);
   }
 
   updateInventoryItem(item: InventoryItem): void {

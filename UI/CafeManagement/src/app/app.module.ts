@@ -21,6 +21,7 @@ import { UserService } from './service/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { InventoryComponent } from './inventory/inventory.component';
+import { DashboardMenuComponent } from './dashboard/dashboard-menu/dashboard-menu.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { InventoryComponent } from './inventory/inventory.component';
     DashboardHeaderComponent,
     DashboardContentComponent,
     AdminDashboardComponent,
-    InventoryComponent
+    InventoryComponent,
+    DashboardMenuComponent
   ],
   imports: [
     BrowserModule,

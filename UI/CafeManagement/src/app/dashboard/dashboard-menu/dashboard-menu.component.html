@@ -1,9 +1,5 @@
 <div class="content">
-    <h3>Manage Inventory </h3>
-    <!-- Add dashboard content here -->
-    <div class="menu-container lh-base">
-
-
+    <h3>Manage Menu</h3>
 
 
 <div class="container-fluid">
@@ -28,7 +24,7 @@
                 <label for="quantity">Quantity</label>
                 <!--<input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItems.quanitiy" name="quantity">-->
                 <input type="text" class="form-control" id="quantity" name="quantity">
-            </div>
+            </div><br>
             <button class="btn btn-success" type="submit">Submit</button>
         </form>
     </div>
@@ -41,28 +37,28 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Item name</th>
-                <th>Quantity</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Available</th>
                 <th>Update</th>
                 <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of inventoryItems">
+            <tr *ngFor="let item of menuItems">
                 <td>{{item.id}}</td>
                 <td>{{item.name}}</td>
-                <td>{{item.quantity}}</td>
-                <td><button (click)="updateInventoryItem(item)">Update</button></td>
-                <td><button (click)="deleteInventoryItem(item.id)">Delete</button></td>
+                <td>{{item.description}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.available}}</td>
+                <td><button (click)="updateMenuItem(item)">Update</button></td>
+                <td><button (click)="deleteMenuItem(item.id)">Delete</button></td>
 
             </tr>
         </tbody>
     </table>
-</div>
-
-
-
-
-     
 </div>
 </div>
