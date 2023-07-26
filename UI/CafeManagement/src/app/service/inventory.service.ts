@@ -14,7 +14,7 @@ export class InventoryService {
 
 
   //Create inventory item
-  createinventoryItem(item: InventoryItem): Observable<InventoryItem>{
+  createInventoryItem(item: InventoryItem): Observable<InventoryItem>{
     return this.http.post<InventoryItem>(this.baseUrl, item);
   }
 

@@ -1,0 +1,59 @@
+
+<div *ngFor="let item of inventoryItems">
+    <h3>{{ item.name }}</h3>
+    <p>Quantity: {{ item.quantity }}</p>
+
+    <!-- Buttons to update and delete inventory items -->
+    <button (click)="updateInventoryItem(item)">Update</button>
+    <button (click)="deleteInventoryItem(item.id)">Delete</button>
+</div>
+
+<div class="container-fluid">
+<h3>Create Inventory Item</h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="ids">Id</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="inventoryItems.id" name="id">
+        </div>
+
+
+        <div class="form-group">
+            <label for="name">Item Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="inventoryItems.name" name="itemName">
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">quantity</label>
+            <input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItems.quanitiy" name="quantity">
+        </div>
+
+        <button class="btn btn-success" type="submit"></button>
+    </form>
+</div>
+
+
+<div class="container-fluid">
+<h3>Inventory</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Item name</th>
+                <th>Quantity</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of inventoryItems">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td><button (click)="updateInventoryItem(item)">Update</button></td>
+                <td><button (click)="deleteInventoryItem(item.id)">Delete</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -5,14 +5,16 @@ import { MenuComponent } from './menu/menu.component';
 import { OrderComponent } from './order/order.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { InventoryComponent } from './inventory/inventory.component';
 
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
+  {path:'', component: HomePageComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'order', component: OrderComponent},
   {path: 'profile', component: UserProfileComponent},
-  {path: 'dashboard', component: AdminDashboardComponent}
+  {path: 'dashboard', component: AdminDashboardComponent},
+  {path: 'inventory', component: InventoryComponent}
 ];
 
 @NgModule({

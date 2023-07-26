@@ -20,6 +20,7 @@ import { PaymentService } from './service/payment.service';
 import { UserService } from './service/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { InventoryComponent } from './inventory/inventory.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     SidebarComponent,
     DashboardHeaderComponent,
     DashboardContentComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,

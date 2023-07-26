@@ -9,6 +9,7 @@ import { MenuService } from '../service/menu.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
+
 export class MenuComponent implements OnInit{
 
   menuItems: MenuItem[] = [];
