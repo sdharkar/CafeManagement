@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateInventoryComponent implements OnInit{
   id!: string;
-  inventoryItems: InventoryItem[] = [];
+  inventoryItems!: InventoryItem[];
 
   constructor(private inventoryService: InventoryService, private activatedRoute: ActivatedRoute, private router: Router) {}
 

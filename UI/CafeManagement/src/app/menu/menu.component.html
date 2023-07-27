@@ -3,52 +3,31 @@
 <h2 class="mb-4">Cafe Menu</h2>
 
     <!-- Search Box -->
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search Menu Items" />
-    </div><br><br>
+    
 
-
-
-<div class="menu-container">
-    <h1>Menu</h1>
-    <div class="menu-list">
-      <div *ngFor="let menuItem of menuItems" class="menu-item">
-        <h2>{{ menuItem.name }}</h2>
-        <p>{{ menuItem.description }}</p>
-        <p>Price: ${{ menuItem.price.toFixed(2) }}</p>
-        <p>Category: {{ menuItem.category }}</p>
-        <p *ngIf="menuItem.available">Available</p>
-        <p *ngIf="!menuItem.available">Not Available</p>
+    <div class="input-group shadow-lg">
+        <input type="search" class="form-control" placeholder="Search">
+        <span class="input-group-append">
+            <button class="btn btn-primary" type="button">&nbsp;
+                <i class="fa fa-search">Search</i>
+            </button>
+        </span>
     </div>
-    </div>
-</div>
+    <br><br>
 
-<div *ngFor="let item of menuItems">
-    <h3>{{ item.name }}</h3>
-    <p>{{ item.description }}</p>
-    <p>Price: {{ item.price }}</p>
-    <!-- Display other menu item properties here -->
-
-    <!-- Buttons to update and delete menu items -->
-    <button (click)="updateMenuItem(item)">Update</button>
-    <button (click)="deleteMenuItem(item.id)">Delete</button>
-</div>
-
-<div class="card-body" style="width: 18rem;">
-    <img src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h3>Pasta</h3>
-        <p>White souse pasta</p>
-        <p>Price Rs. 150/-</p>
-        <button class="btn btn-primary">Order now</button> 
-        <button class="btn btn-dark">Add to cart</button>
+<!--Cards of menu-->
+<div class="card-body shadow-lg" style="width: 20rem;">
+    <img class="shadow" src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="...">
+    <div class="card-body" style="text-align: center;">
         <div *ngFor="let item of menuItems">
             <h3>{{ item.name }}</h3>
             <p>{{ item.description }}</p>
-            <p>Price: {{ item.price }}</p>
+            <p>{{ item.price }}/-</p>
             <!-- Display other menu item properties here -->
-            <button class="btn btn-primary">Order now</button> 
-            <button class="btn btn-dark">Add to cart</button>
+            <div class="card" style="width: 20rem;">
+                <button class="btn btn-primary align-center">Order now</button>
+                <button class="btn btn-dark align-center">Add to cart</button>
+            </div>
         </div>
     </div>
 </div>

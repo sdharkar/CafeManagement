@@ -9,7 +9,7 @@ import { OrderService } from '../service/order.service';
 })
 export class OrderComponent {
 
-  orders: Order[] = [];
+  orders!: Order[];
 
   constructor(private orderService: OrderService){
     this.loadOrdersForUser('user123');

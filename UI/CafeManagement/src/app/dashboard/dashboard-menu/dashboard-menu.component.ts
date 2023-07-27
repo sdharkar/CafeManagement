@@ -9,7 +9,7 @@ import { MenuItem } from 'src/model/menu-item.model';
 })
 export class DashboardMenuComponent implements OnInit {
 
-  menuItems: MenuItem[] = [];
+  menuItems!: MenuItem[];
   
   constructor(private menuService: MenuService) {}
 

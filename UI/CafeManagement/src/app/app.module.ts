@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { InventoryComponent } from './inventory/inventory.component';
 import { DashboardMenuComponent } from './dashboard/dashboard-menu/dashboard-menu.component';
 import { UpdateInventoryComponent } from './update-inventory/update-inventory.component';
+import { DashboardPaymentComponent } from './dashboard/dashboard-payment/dashboard-payment.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UpdateInventoryComponent } from './update-inventory/update-inventory.co
     AdminDashboardComponent,
     InventoryComponent,
     DashboardMenuComponent,
-    UpdateInventoryComponent
+    UpdateInventoryComponent,
+    DashboardPaymentComponent
   ],
   imports: [
     BrowserModule,

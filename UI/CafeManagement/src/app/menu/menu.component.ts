@@ -12,12 +12,25 @@ import { MenuService } from '../service/menu.service';
 
 export class MenuComponent implements OnInit{
 
-  menuItems: MenuItem[] = [];
+  menuItems!: MenuItem[];
 
   menuItem: MenuItem = new MenuItem();
   
   constructor(private menuService: MenuService) {}
 
+  ngOnInit(): void {
+  this.menuItems = [{
+    "id":"1",
+    "name":"Pasta",
+    "description":"White pasta",
+    "price":150,
+    "category":"pizza",
+    "available":true
+  }];
+
+}
+
+  /*
   ngOnInit(): void {
     this.loadMenuItems();
   }
@@ -68,5 +81,7 @@ export class MenuComponent implements OnInit{
       }
     );
   }
+
+  */
 
 }

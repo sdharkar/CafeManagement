@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class InventoryComponent implements OnInit{
 
-  inventoryItems: InventoryItem[]=[];
+  inventoryItems!: InventoryItem[];
 
   inventoryItem: InventoryItem = new InventoryItem();
 
