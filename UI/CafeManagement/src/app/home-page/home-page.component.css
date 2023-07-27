@@ -4,6 +4,7 @@ text-align: center;
 }
 
 .hero-section {
+background-image: "https://images.pexels.com/photos/12821517/pexels-photo-12821517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" ;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -30,4 +31,14 @@ padding: 0.8rem 1.5rem;
 border-radius: 4px;
 text-decoration: none;
 font-size: 1.2rem;
+}
+
+img{
+    width:400px ;
+    height: 400px;
+}
+
+.container-md{
+    align-items: center;
+    border-radius: 20px;
 }

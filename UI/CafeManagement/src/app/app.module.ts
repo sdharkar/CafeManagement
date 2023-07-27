@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { InventoryComponent } from './inventory/inventory.component';
 import { DashboardMenuComponent } from './dashboard/dashboard-menu/dashboard-menu.component';
+import { UpdateInventoryComponent } from './update-inventory/update-inventory.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DashboardMenuComponent } from './dashboard/dashboard-menu/dashboard-men
     DashboardContentComponent,
     AdminDashboardComponent,
     InventoryComponent,
-    DashboardMenuComponent
+    DashboardMenuComponent,
+    UpdateInventoryComponent
   ],
   imports: [
     BrowserModule,

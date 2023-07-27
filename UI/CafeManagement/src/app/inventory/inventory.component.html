@@ -43,8 +43,7 @@
                 <th>Id</th>
                 <th>Item name</th>
                 <th>Quantity</th>
-                <th>Update</th>
-                <th>Delete</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -52,8 +51,10 @@
                 <td>{{item.id}}</td>
                 <td>{{item.name}}</td>
                 <td>{{item.quantity}}</td>
-                <td><button (click)="updateInventoryItem(item)">Update</button></td>
-                <td><button (click)="deleteInventoryItem(item.id)">Delete</button></td>
+                <td>
+                    <button (click)="updateInventoryItem(item)" routerLink="/update-inventory">Update</button>
+                    <button (click)="deleteInventoryItem(item.id)">Delete</button>
+                </td>
 
             </tr>
         </tbody>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InventoryItem } from 'src/model/inventory-item.model';
 import { InventoryService } from '../service/inventory.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inventory',
@@ -11,7 +12,9 @@ export class InventoryComponent implements OnInit{
 
   inventoryItems: InventoryItem[]=[];
 
-  constructor(private inventoryService: InventoryService) {}
+  inventoryItem: InventoryItem = new InventoryItem();
+
+  constructor(private inventoryService: InventoryService, private router:Router) {}
 
   ngOnInit(): void {
     this.loadInventoryItems();
@@ -21,6 +24,7 @@ export class InventoryComponent implements OnInit{
     this.inventoryService.getInventoryItem().subscribe(
       items => {
         this.inventoryItems = items;
+        console.log("loading inventory items");
       },
       error => {
         console.error('Error loading inventory items:', error);
@@ -33,6 +37,7 @@ export class InventoryComponent implements OnInit{
     this.inventoryService.createInventoryItem(item).subscribe(
       createdItem => {
         this.inventoryItems.push(createdItem);
+        console.log(createdItem);
       },
       error => {
         console.error('Error creating inventory item:', error);
@@ -52,6 +57,8 @@ export class InventoryComponent implements OnInit{
         if (index !== -1) {
           this.inventoryItems[index] = updatedItem;
         }
+        this.router.navigate(['update-inventory', item.id]);
+        console.log(updatedItem);
       },
       (error) => {
         console.error('Error updating inventory item:', error);

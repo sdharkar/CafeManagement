@@ -6,6 +6,7 @@ import { OrderComponent } from './order/order.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { InventoryComponent } from './inventory/inventory.component';
+import { UpdateInventoryComponent } from './update-inventory/update-inventory.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'order', component: OrderComponent},
   {path: 'profile', component: UserProfileComponent},
   {path: 'dashboard', component: AdminDashboardComponent},
-  {path: 'inventory', component: InventoryComponent}
+  {path: 'inventory', component: InventoryComponent},
+  {path: 'update-inventory', component: UpdateInventoryComponent}
 ];
 
 @NgModule({

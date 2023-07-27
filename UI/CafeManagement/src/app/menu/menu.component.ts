@@ -13,6 +13,8 @@ import { MenuService } from '../service/menu.service';
 export class MenuComponent implements OnInit{
 
   menuItems: MenuItem[] = [];
+
+  menuItem: MenuItem = new MenuItem();
   
   constructor(private menuService: MenuService) {}
 
