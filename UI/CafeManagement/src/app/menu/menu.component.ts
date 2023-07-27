@@ -26,6 +26,14 @@ export class MenuComponent implements OnInit{
     "price":150,
     "category":"pizza",
     "available":true
+  },
+  {
+    "id":"2",
+    "name":"Pasta",
+    "description":"White pasta",
+    "price":150,
+    "category":"pizza",
+    "available":true
   }];
 
 }

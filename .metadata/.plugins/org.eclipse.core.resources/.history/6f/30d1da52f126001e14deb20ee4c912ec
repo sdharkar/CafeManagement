@@ -1,6 +1,0 @@
-package com.manu.management.controller;
-
-@RestController
-public class ManuController {
-
-}

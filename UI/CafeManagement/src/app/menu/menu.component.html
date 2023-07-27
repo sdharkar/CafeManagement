@@ -3,8 +3,6 @@
 <h2 class="mb-4">Cafe Menu</h2>
 
     <!-- Search Box -->
-    
-
     <div class="input-group shadow-lg">
         <input type="search" class="form-control" placeholder="Search">
         <span class="input-group-append">
@@ -16,19 +14,26 @@
     <br><br>
 
 <!--Cards of menu-->
-<div class="card-body shadow-lg" style="width: 20rem;">
-    <img class="shadow" src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="...">
-    <div class="card-body" style="text-align: center;">
-        <div *ngFor="let item of menuItems">
-            <h3>{{ item.name }}</h3>
-            <p>{{ item.description }}</p>
-            <p>{{ item.price }}/-</p>
-            <!-- Display other menu item properties here -->
+<div class="container">
+    <div class="row">
+        <ng-container class="list" *ngFor="let item of menuItems">
             <div class="card" style="width: 20rem;">
-                <button class="btn btn-primary align-center">Order now</button>
-                <button class="btn btn-dark align-center">Add to cart</button>
+                <img class="card-img-top" src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card image cap">
+                <div class="card-body">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <p>{{ item.price }}/-</p>
+                    <!--
+                    <a *ngIf="!login.isLoggenIn()" type="buttton" class="btn btn-secondary" routerLink="/jwtlogin">Login</a>
+                    <a *ngIf="login.isLoggenIn()" type="buttton" class="btn btn-primary" (click)="pay(coupon.code,coupon.category,coupon.provider,coupon.description)">GRAB DEAL</a>
+                    -->
+                    <div class="card-group" style="width:auto;">
+                        <button class="btn btn-primary align-center">Order now</button>
+                        <button class="btn btn-secondary align-center">Add to cart</button>
+                    </div>
+                </div>
             </div>
-        </div>
+        </ng-container>
     </div>
 </div>
 
