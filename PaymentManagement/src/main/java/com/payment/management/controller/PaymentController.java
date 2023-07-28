@@ -3,6 +3,7 @@ package com.payment.management.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import com.payment.management.model.Payment;
 import com.payment.management.repository.PaymentRepository;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/payment")
 public class PaymentController {
 	

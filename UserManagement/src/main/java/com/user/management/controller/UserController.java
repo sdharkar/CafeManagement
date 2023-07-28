@@ -1,6 +1,7 @@
 package com.user.management.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import com.user.management.model.User;
 import com.user.management.repository.UserRepository;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/user")
 public class UserController {
 	

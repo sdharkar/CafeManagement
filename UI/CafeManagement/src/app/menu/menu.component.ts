@@ -14,35 +14,30 @@ export class MenuComponent implements OnInit{
 
   menuItems!: MenuItem[];
 
-  menuItem: MenuItem = new MenuItem();
+  //menuItem: MenuItem = new MenuItem();
   
   constructor(private menuService: MenuService) {}
 
   ngOnInit(): void {
-  this.menuItems = [{
-    "id":"1",
-    "name":"Pasta",
-    "description":"White pasta",
-    "price":150,
-    "category":"pizza",
-    "available":true
-  },
-  {
-    "id":"2",
-    "name":"Pasta",
-    "description":"White pasta",
-    "price":150,
-    "category":"pizza",
-    "available":true
-  }];
-
+  this.loadMenuItems();
 }
-
+/*
+private loadMenuItems(){
+  this.menuService.getMenuItem().subscribe(data =>{
+    this.menuItems = data;
+    console.log('MenuItem is loading');
+  },
+  error =>{
+    console.error("Error in loading menu items", error);
+  }
+  );
+}
+*.
   /*
   ngOnInit(): void {
     this.loadMenuItems();
   }
-
+  */
   loadMenuItems(): void{
     this.menuService.getMenuItem().subscribe(
       (items) => {
@@ -53,7 +48,7 @@ export class MenuComponent implements OnInit{
       }
     );
   }
-
+/*
   createMenuItem(item: MenuItem): void{
     this.menuService.createMunuItem(item).subscribe(
       (createdItem) => {
@@ -89,7 +84,6 @@ export class MenuComponent implements OnInit{
       }
     );
   }
-
-  */
+*/
 
 }

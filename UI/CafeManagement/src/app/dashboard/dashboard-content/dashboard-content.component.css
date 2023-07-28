@@ -1,4 +1,12 @@
 .content {
-    background-color: #f4f4f4;
+    background-color: #EEEEEE;
+    padding: 30px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.mask{
     padding: 20px;
+    background-color: #068FFF;
+    border-radius: 10px;
 }
