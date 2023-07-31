@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuService } from 'src/app/service/menu.service';
 import { MenuItem } from 'src/model/menu-item.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard-menu',
@@ -10,8 +12,10 @@ import { MenuItem } from 'src/model/menu-item.model';
 export class DashboardMenuComponent implements OnInit {
 
   menuItems!: MenuItem[];
+
+  menuItem : MenuItem = new MenuItem();
   
-  constructor(private menuService: MenuService) {}
+  constructor(private menuService: MenuService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadMenuItems();
@@ -28,21 +32,36 @@ export class DashboardMenuComponent implements OnInit {
     );
   }
 
-  createMenuItem(item: MenuItem): void{
-    this.menuService.createMunuItem(item).subscribe(
-      (createdItem) => {
-        this.menuItems.push(createdItem);
+  createMenuItem(){
+    this.menuService.createMunuItem(this.menuItem).subscribe(
+      createdItem => {
+        console.log(createdItem);
+        this.goToDashboard();
+        //Dialog box
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Inventroy Item created successfully!!!',
+          showConfirmButton: false,
+          timer: 1500
+        })
       },
-      (error) => {
+      error => {
         console.error('Error creating menu item:', error);
       }
     );
   }
 
+  goToDashboard(){
+    this.router.navigate(['/dashboard']);
+  }
+
   //Submit button action 
   onSubmit(){
     console.log(this.menuItems);
+    this.createMenuItem();
   }
+
 
   updateMenuItem(item: MenuItem): void{
     this.menuService.updateMenuItem(item.id, item).subscribe(
@@ -67,6 +86,25 @@ export class DashboardMenuComponent implements OnInit {
         console.error('Error deleting menu item:', error);
       }
     );
+  }
+
+  //method to confirm the deletion before calling the service
+  confirmDelete(id: string): void{
+    Swal.fire({
+      title: "Confirm Deletion",
+      text: "Are you sure, you want to delete this menu item?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.deleteMenuItem(id);
+      }
+    });
+
+  
   }
 
 

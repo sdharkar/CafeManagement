@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InventoryItem } from 'src/model/inventory-item.model';
 import { InventoryService } from '../service/inventory.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inventory',
@@ -32,22 +33,32 @@ export class InventoryComponent implements OnInit{
     );
   }
 
-  
-  createInventoryItem(item: InventoryItem): void {
-    this.inventoryService.createInventoryItem(item).subscribe(
-      createdItem => {
-        this.inventoryItems.push(createdItem);
-        console.log(createdItem);
-      },
-      error => {
-        console.error('Error creating inventory item:', error);
-      }
-    );
+  saveInventoryItem(){
+    this.inventoryService.createInventoryItem(this.inventoryItem).subscribe(
+      data =>{
+      console.log(data);
+      this.goToDashboard();
+      //Dialog box
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Inventroy Item created successfully!!!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    },
+    error => console.error("Error creating inventory item", error));
   }
+
+  goToDashboard(){
+    this.router.navigate(['/dashboard']);
+  }
+
 
   //Submit button action 
   onSubmit(){
-    console.log(this.inventoryItems);
+    console.log(this.inventoryItem);
+    this.saveInventoryItem();
   }
 
   updateInventoryItem(item: InventoryItem): void {
@@ -66,10 +77,11 @@ export class InventoryComponent implements OnInit{
     );
   }
 
-  deleteInventoryItem(id: string): void {
+  deleteInventoryItem(id: string){
     this.inventoryService.deleteInventoryItem(id).subscribe(
-      () => {
-        this.inventoryItems = this.inventoryItems.filter((item) => item.id !== id);
+      (data: any) => {
+        console.log(data, "Inventory Item deleated");
+        this.loadInventoryItems();
       },
       (error) => {
         console.error('Error deleting inventory item:', error);
@@ -77,4 +89,27 @@ export class InventoryComponent implements OnInit{
     );
   }
 
+
+  //method to confirm the deletion before calling the service
+  confirmDelete(id: string): void{
+    Swal.fire({
+      title: "Confirm Deletion",
+      text: "Are you sure, you want to delete this inventory item?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.deleteInventoryItem(id);
+      }
+    });
+  }
+
+
+
+  
 }
+
+

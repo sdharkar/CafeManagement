@@ -7,21 +7,18 @@
 
             <div class="form-group">
                 <label for="ids">Id</label>
-                <!--<input type="text" class="form-control" id="id" [(ngModel)]="inventoryItems.id" name="id">-->
-                <input type="text" class="form-control" id="id" name="id">
+                <input type="text" class="form-control" id="id" [(ngModel)]="inventoryItem.id" name="id">
             </div>
 
 
             <div class="form-group">
                 <label for="name">Item Name</label>
-                <!--<input type="text" class="form-control" id="name" [(ngModel)]="inventoryItems.name" name="itemName">-->
-                <input type="text" class="form-control" id="name" name="itemName">
+                <input type="text" class="form-control" id="name" [(ngModel)]="inventoryItem.name" name="itemName">
             </div>
 
             <div class="form-group">
                 <label for="quantity">Quantity</label>
-                <!--<input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItems.quanitiy" name="quantity">-->
-                <input type="text" class="form-control" id="quantity" name="quantity">
+                <input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItem.quantity" name="quantity">
             </div><br>
             <button class="btn btn-success" type="submit">Submit</button>
         </form>

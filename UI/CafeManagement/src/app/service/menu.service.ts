@@ -16,7 +16,7 @@ export class MenuService {
 
   //Create MenuItem
   createMunuItem(menuItem: MenuItem):Observable<MenuItem>{
-    return this.http.post<MenuItem>('${this.baseUrl1}', menuItem);
+    return this.http.post<MenuItem>(this.baseUrl1, menuItem);
   }
 
   //Get MenuItem
@@ -26,17 +26,17 @@ export class MenuService {
 
   //Get menu by id
   getMenuItemById(id: string): Observable<MenuItem>{
-    return this.http.get<MenuItem>('${this.baseUrl1}/${id}')
+    return this.http.get<MenuItem>(`${this.baseUrl1}/${id}`)
   }
 
   //Update menuItem
   updateMenuItem(id: string, menuItem: MenuItem): Observable<MenuItem>{
-    return this.http.put<MenuItem>('${this.baseUrl1}/${id}', menuItem);
+    return this.http.put<MenuItem>(`${this.baseUrl1}/${id}`, menuItem);
   }
 
   //Delete menu item
   deleteMenuItem(id: string): Observable<void>{
-    return this.http.delete<void>('${this.baseUrl1}/${id}');
+    return this.http.delete<void>(`${this.baseUrl1}/${id}`);
   }
   
 }

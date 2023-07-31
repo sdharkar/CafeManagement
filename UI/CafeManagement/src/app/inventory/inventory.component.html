@@ -3,9 +3,6 @@
     <!-- Add dashboard content here -->
     <div class="menu-container lh-base">
 
-
-
-
 <div class="container-fluid">
     <div class="col-md-8 offset-md-2">
         <h3>Create Inventory Item</h3>
@@ -13,21 +10,20 @@
 
             <div class="form-group">
                 <label for="ids">Id</label>
-                <!--<input type="text" class="form-control" id="id" [(ngModel)]="inventoryItems.id" name="id">-->
-                <input type="text" class="form-control" id="id" name="id">
+                <input type="text" class="form-control" id="id" [(ngModel)]="inventoryItem.id" name="id" placeholder="Enter Id">
             </div>
 
             <div class="form-group">
                 <label for="name">Item Name</label>
-                <!--<input type="text" class="form-control" id="name" [(ngModel)]="inventoryItems.name" name="itemName">-->
-                <input type="text" class="form-control" id="name" name="itemName">
+                <input type="text" class="form-control" id="name" [(ngModel)]="inventoryItem.name" name="itemName" placeholder="Enter name">
             </div>
 
             <div class="form-group">
                 <label for="quantity">Quantity</label>
-                <!--<input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItems.quanitiy" name="quantity">-->
-                <input type="text" class="form-control" id="quantity" name="quantity">
+                <input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItem.quantity" name="quantity" placeholder="Enter quanitiy of a item">
             </div>
+            <br>
+
             <button class="btn btn-success" type="submit">Submit</button>
         </form>
     </div>
@@ -52,9 +48,8 @@
                     <td>{{item.quantity}}</td>
                     <td>
                         <button class="btn btn-primary" (click)="updateInventoryItem(item)" routerLink="/update-inventory">Update</button>
-                        <button class="btn btn-danger" (click)="deleteInventoryItem(item.id)">Delete</button>
+                        <button class="btn btn-danger" (click)="confirmDelete(item.id)">Delete</button>
                     </td>
-
                 </tr>
             </tbody>
         </table>

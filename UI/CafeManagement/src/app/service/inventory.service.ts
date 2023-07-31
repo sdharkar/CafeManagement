@@ -8,34 +8,34 @@ import { InventoryItem } from 'src/model/inventory-item.model';
 })
 export class InventoryService {
 
-  private baseUrl = 'http://localhost:9612/api/inventory/item';
+  private baseUrl2 = 'http://localhost:9612/api/inventory/item';
 
   constructor(private http: HttpClient) { }
 
 
   //Create inventory item
   createInventoryItem(item: InventoryItem): Observable<InventoryItem>{
-    return this.http.post<InventoryItem>(this.baseUrl, item);
+    return this.http.post<InventoryItem>(this.baseUrl2, item);
   }
 
   //Get inventory items
   getInventoryItem(): Observable<InventoryItem[]>{
-    return this.http.get<InventoryItem[]>(this.baseUrl);
+    return this.http.get<InventoryItem[]>(this.baseUrl2);
   }
 
   //Get inventory item by id
   getInventoryItemById(id: string): Observable<InventoryItem>{
-    return this.http.get<InventoryItem>('${this.baseUrl}/${id}');
+    return this.http.get<InventoryItem>(`${this.baseUrl2}/${id}`);
   }
 
   //Update inventory item
   updateInventoryItem(id: string, item: InventoryItem): Observable<InventoryItem>{
-    return this.http.put<InventoryItem>('${this.baseUrl}/${id}', item);
+    return this.http.put<InventoryItem>(`${this.baseUrl2}/${id}`, item);
   }
 
 
   //Delete inventory item
   deleteInventoryItem(id: string): Observable<void>{
-    return this.http.delete<void>('${this.baseUrl}/${id}');
+    return this.http.delete<void>(`${this.baseUrl2}/${id}`);
   }
 }

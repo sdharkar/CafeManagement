@@ -10,17 +10,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateInventoryComponent implements OnInit{
   id!: string;
-  inventoryItems!: InventoryItem[];
+  inventoryItems: InventoryItem[] =[];
+
+  inventoryItem : InventoryItem = new InventoryItem();
+
+
 
   constructor(private inventoryService: InventoryService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    //To get id from router link : activatedRoute 
     this.id = this.activatedRoute.snapshot.params['id'];
-    //this.inventoryService.getInventoryItemById(this.id).subscribe(
-      //data => { this.inventoryItems = data;
-      //}, error => console.error("Error in getting inventory item by id")
-   // );
   }
 
   updateInventoryItem(item: InventoryItem): void {

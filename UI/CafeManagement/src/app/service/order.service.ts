@@ -8,33 +8,33 @@ import { Order } from 'src/model/order.model';
 })
 export class OrderService {
 
-  private baseUrl = 'http://localhost:9611/api/orders';
+  private baseUrl3 = 'http://localhost:9611/api/orders';
 
   constructor(private http: HttpClient) { }
 
   //Place order
   placeOrder(order: Order): Observable<Order>{
-    return this.http.post<Order>(this.baseUrl, order);
+    return this.http.post<Order>(this.baseUrl3, order);
   }
 
   // Get order by id
   getOrderById(id: string): Observable<Order>{
-    return this.http.get<Order>(`${this.baseUrl}/${id}`);
+    return this.http.get<Order>(`${this.baseUrl3}/${id}`);
   }
 
   //Get orders for user
   getOrdersForUsers(userId: string): Observable<Order[]>{
-    return this.http.get<Order[]>("${this.baseUrl}/user/${userId}");
+    return this.http.get<Order[]>(`${this.baseUrl3}/user/${userId}`);
   }
 
   //Update order status
   updateOrderStatus(id: string, status: string): Observable<Order>{
-    return this.http.put<Order>(`${this.baseUrl}/${id}/status`, { status });
+    return this.http.put<Order>(`${this.baseUrl3}/${id}/status`, { status });
   }
 
   //Cancel Order
   cancelOrder(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+    return this.http.delete<void>(`${this.baseUrl3}/${id}`);
   }
 
 }

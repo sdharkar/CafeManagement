@@ -8,28 +8,28 @@ import { User } from 'src/model/user.model';
 })
 export class UserService {
 
-  private baseUrl = 'http://localhost:9614/api/user';
+  private baseUrl5 = 'http://localhost:9614/api/user';
 
   constructor(private http: HttpClient) { }
 
   //Create user
   createUser(user: User): Observable<User>{
-    return this.http.post<User>(this.baseUrl, user);
+    return this.http.post<User>(this.baseUrl5, user);
   }
 
   //Get user by id
   getUserById(id:number): Observable<User>{
-    return this.http.get<User>('${this.baseUrl}/${id}');
+    return this.http.get<User>(`${this.baseUrl5}/${id}`);
   }
 
   //Update user
   updateUser(id: number, user: User): Observable<User>{
-    return this.http.put<User>('${this.baseUrl}/${id}', user);
+    return this.http.put<User>(`${this.baseUrl5}/${id}`, user);
   }
 
   //Delete user
   deleteUser(id: number): Observable<void>{
-    return this.http.delete<void>('${this.baseUrl}/${id}');
+    return this.http.delete<void>(`${this.baseUrl5}/${id}`);
   }
   
 }
