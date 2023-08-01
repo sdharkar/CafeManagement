@@ -67,7 +67,7 @@
                 <td>{{item.category}}</td>
                 <td>{{item.available}}</td>
                 <td>
-                    <button class="btn btn-primary" (click)="updateMenuItem(item)">Update</button>
+                    <button class="btn btn-primary" (click)="updateMenuItem(item.id)">Update</button>
                     <button class="btn btn-danger" (click)="confirmDelete(item.id)">Delete</button>
                 </td>
             </tr>

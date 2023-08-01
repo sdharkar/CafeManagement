@@ -21,23 +21,7 @@ export class MenuComponent implements OnInit{
   ngOnInit(): void {
   this.loadMenuItems();
 }
-/*
-private loadMenuItems(){
-  this.menuService.getMenuItem().subscribe(data =>{
-    this.menuItems = data;
-    console.log('MenuItem is loading');
-  },
-  error =>{
-    console.error("Error in loading menu items", error);
-  }
-  );
-}
-*.
-  /*
-  ngOnInit(): void {
-    this.loadMenuItems();
-  }
-  */
+
   loadMenuItems(): void{
     this.menuService.getMenuItem().subscribe(
       (items) => {

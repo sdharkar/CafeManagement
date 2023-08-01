@@ -9,6 +9,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { UpdateInventoryComponent } from './update-inventory/update-inventory.component';
 import { DashboardMenuComponent } from './dashboard/dashboard-menu/dashboard-menu.component';
 import { DashboardContentComponent } from './dashboard/dashboard-content/dashboard-content.component';
+import { UpdateMenuComponent } from './dashboard/update-menu/update-menu.component';
 
 
 const routes: Routes = [
@@ -18,9 +19,10 @@ const routes: Routes = [
   {path: 'profile', component: UserProfileComponent},
   {path: 'dashboard', component: AdminDashboardComponent},
   {path: 'inventory', component: InventoryComponent},
-  {path: 'update-inventory', component: UpdateInventoryComponent},
+  {path: 'update-inventory/:id', component: UpdateInventoryComponent},
   {path: 'dashboard-menu', component: DashboardMenuComponent},
-  {path: 'dashboard-content', component: DashboardContentComponent}
+  {path: 'dashboard-content', component: DashboardContentComponent},
+  {path: 'update-menu/:id', component: UpdateMenuComponent}
 ];
 
 @NgModule({

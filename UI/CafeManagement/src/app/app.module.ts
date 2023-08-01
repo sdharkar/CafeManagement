@@ -24,6 +24,8 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { DashboardMenuComponent } from './dashboard/dashboard-menu/dashboard-menu.component';
 import { UpdateInventoryComponent } from './update-inventory/update-inventory.component';
 import { DashboardPaymentComponent } from './dashboard/dashboard-payment/dashboard-payment.component';
+import { DashboardUserComponent } from './dashboard/dashboard-user/dashboard-user.component';
+import { UpdateMenuComponent } from './dashboard/update-menu/update-menu.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { DashboardPaymentComponent } from './dashboard/dashboard-payment/dashboa
     InventoryComponent,
     DashboardMenuComponent,
     UpdateInventoryComponent,
-    DashboardPaymentComponent
+    DashboardPaymentComponent,
+    DashboardUserComponent,
+    UpdateMenuComponent
   ],
   imports: [
     BrowserModule,

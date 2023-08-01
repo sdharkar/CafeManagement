@@ -19,31 +19,29 @@ export class UpdateInventoryComponent implements OnInit{
   constructor(private inventoryService: InventoryService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.params['id'];
-  }
+    this.id = this.activatedRoute.snapshot.params['id']; // to get the menu item id in the router 
 
-  updateInventoryItem(item: InventoryItem): void {
-    this.inventoryService.updateInventoryItem(item.id, item).subscribe(
-      updatedItem => {
-        const index = this.inventoryItems.findIndex((x) => x.id === updatedItem.id);
-        if (index !== -1) {
-          this.inventoryItems[index] = updatedItem;
-        }
-        console.log(updatedItem);
-      },
-      (error) => {
-        console.error('Error updating inventory item:', error);
-      }
-    );
+    this.inventoryService.getInventoryItemById(this.id).subscribe(data => {
+      console.log(data);
+      this.inventoryItem = data;
+    },
+    error => console.error('Error in updating inventory item', error));
   }
 
   onSubmit(){
-    //this.inventoryService.updateInventoryItem().subscribe( data =>{
+    this.inventoryService.updateInventoryItem(this.id, this.inventoryItem).subscribe( data => {
+      this.goToInventory();
+    }, 
+  error => console.error('Error in updating inventory item', error));
+
+  
   }
 
-  goToInventory(){
+  //Go to inventory
+  goToInventory() {
     this.router.navigate(['/inventory']);
   }
 
 
 }
+

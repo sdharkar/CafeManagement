@@ -1,0 +1,14 @@
+/* You can add custom styles for the order page here */
+/* For example, add some spacing and style for the buttons */
+
+h2 {
+margin-top: 20px;
+}
+
+form, div {
+margin: 10px;
+}
+
+button {
+margin-right: 10px;
+}

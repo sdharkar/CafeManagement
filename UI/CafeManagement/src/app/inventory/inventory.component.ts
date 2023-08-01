@@ -61,20 +61,9 @@ export class InventoryComponent implements OnInit{
     this.saveInventoryItem();
   }
 
-  updateInventoryItem(item: InventoryItem): void {
-    this.inventoryService.updateInventoryItem(item.id, item).subscribe(
-      (updatedItem) => {
-        const index = this.inventoryItems.findIndex((x) => x.id === updatedItem.id);
-        if (index !== -1) {
-          this.inventoryItems[index] = updatedItem;
-        }
-        this.router.navigate(['update-inventory', item.id]);
-        console.log(updatedItem);
-      },
-      (error) => {
-        console.error('Error updating inventory item:', error);
-      }
-    );
+  //Update inventory router link
+  updateInventoryItem(id: string){
+    this.router.navigate(['update-inventory', id]);
   }
 
   deleteInventoryItem(id: string){

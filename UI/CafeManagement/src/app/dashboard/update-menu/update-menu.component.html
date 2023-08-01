@@ -1,0 +1,46 @@
+<div class="content">
+    <h3>Update Menu</h3>
+
+
+<div class="container-lg">
+    <div class="col-md-8 offset-md-2">
+        <h3 style="align-items: center;">Create Menu Item</h3>
+        <form (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="ids">Id</label>
+                <input type="text" class="form-control" id="id" [(ngModel)]="menuItem.id" name="id">
+            </div>
+
+
+            <div class="form-group">
+                <label for="name">Item Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="menuItem.name" name="itemName">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" id="description" [(ngModel)]="menuItem.description" name="description">
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" id="price" [(ngModel)]="menuItem.price" name="price">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="category" [(ngModel)]="menuItem.category" name="category">
+            </div>
+
+            <div class="form-group">
+                <label for="available">Available</label>
+                <input type="boolean" class="form-control" id="available" [(ngModel)]="menuItem.available" name="available">
+            </div>
+            <br>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+</div>

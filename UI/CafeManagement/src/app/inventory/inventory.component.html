@@ -47,7 +47,7 @@
                     <td>{{item.name}}</td>
                     <td>{{item.quantity}}</td>
                     <td>
-                        <button class="btn btn-primary" (click)="updateInventoryItem(item)" routerLink="/update-inventory">Update</button>
+                        <button class="btn btn-primary" (click)="updateInventoryItem(item.id)" routerLink="/update-inventory">Update</button>
                         <button class="btn btn-danger" (click)="confirmDelete(item.id)">Delete</button>
                     </td>
                 </tr>

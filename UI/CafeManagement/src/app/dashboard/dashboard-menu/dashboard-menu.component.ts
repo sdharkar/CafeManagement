@@ -62,21 +62,7 @@ export class DashboardMenuComponent implements OnInit {
     this.createMenuItem();
   }
 
-
-  updateMenuItem(item: MenuItem): void{
-    this.menuService.updateMenuItem(item.id, item).subscribe(
-      (updatedItem) => {
-        const index = this.menuItems.findIndex((x) => x.id === updatedItem.id);
-        if (index !== -1){
-          this.menuItems[index] = updatedItem;
-        }
-      },
-      (error) => {
-        console.error('Error updating menu item:', error);
-      }
-    );
-  }
-
+  // Delete menu Item
   deleteMenuItem(id: string): void {
     this.menuService.deleteMenuItem(id).subscribe(
       () => {
@@ -103,8 +89,11 @@ export class DashboardMenuComponent implements OnInit {
         this.deleteMenuItem(id);
       }
     });
+  }
 
-  
+  //Update menu item
+  updateMenuItem(id: string){
+    this.router.navigate(['update-menu', id]);
   }
 
 
