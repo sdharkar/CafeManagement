@@ -26,6 +26,8 @@ import { UpdateInventoryComponent } from './update-inventory/update-inventory.co
 import { DashboardPaymentComponent } from './dashboard/dashboard-payment/dashboard-payment.component';
 import { DashboardUserComponent } from './dashboard/dashboard-user/dashboard-user.component';
 import { UpdateMenuComponent } from './dashboard/update-menu/update-menu.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { UpdateMenuComponent } from './dashboard/update-menu/update-menu.compone
     UpdateInventoryComponent,
     DashboardPaymentComponent,
     DashboardUserComponent,
-    UpdateMenuComponent
+    UpdateMenuComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

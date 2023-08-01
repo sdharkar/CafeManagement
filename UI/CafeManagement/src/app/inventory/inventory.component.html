@@ -9,11 +9,6 @@
         <form (ngSubmit)="onSubmit()">
 
             <div class="form-group">
-                <label for="ids">Id</label>
-                <input type="text" class="form-control" id="id" [(ngModel)]="inventoryItem.id" name="id" placeholder="Enter Id">
-            </div>
-
-            <div class="form-group">
                 <label for="name">Item Name</label>
                 <input type="text" class="form-control" id="name" [(ngModel)]="inventoryItem.name" name="itemName" placeholder="Enter name">
             </div>
@@ -24,7 +19,7 @@
             </div>
             <br>
 
-            <button class="btn btn-success" type="submit">Submit</button>
+            <button class="btn btn-success cafe_btn" type="submit">Submit</button>
         </form>
     </div>
 </div>
@@ -35,7 +30,6 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Item name</th>
                     <th>Quantity</th>
                     <th>Actions</th>
@@ -43,12 +37,12 @@
             </thead>
             <tbody>
                 <tr *ngFor="let item of inventoryItems">
-                    <td>{{item.id}}</td>
                     <td>{{item.name}}</td>
                     <td>{{item.quantity}}</td>
                     <td>
-                        <button class="btn btn-primary" (click)="updateInventoryItem(item.id)" routerLink="/update-inventory">Update</button>
-                        <button class="btn btn-danger" (click)="confirmDelete(item.id)">Delete</button>
+                        
+                        <button class="btn btn-primary cafe_btn mx-2" (click)="updateInventoryItem(item.id)" routerLink="/update-inventory">Update</button>
+                        <button class="btn btn-danger cafe_btn" (click)="confirmDelete(item.id)">Delete</button>
                     </td>
                 </tr>
             </tbody>

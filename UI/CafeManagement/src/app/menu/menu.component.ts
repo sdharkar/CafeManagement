@@ -32,42 +32,5 @@ export class MenuComponent implements OnInit{
       }
     );
   }
-/*
-  createMenuItem(item: MenuItem): void{
-    this.menuService.createMunuItem(item).subscribe(
-      (createdItem) => {
-        this.menuItems.push(createdItem);
-      },
-      (error) => {
-        console.error('Error creating menu item:', error);
-      }
-    );
-  }
-
-  updateMenuItem(item: MenuItem): void{
-    this.menuService.updateMenuItem(item.id, item).subscribe(
-      (updatedItem) => {
-        const index = this.menuItems.findIndex((x) => x.id === updatedItem.id);
-        if (index !== -1){
-          this.menuItems[index] = updatedItem;
-        }
-      },
-      (error) => {
-        console.error('Error updating menu item:', error);
-      }
-    );
-  }
-
-  deleteMenuItem(id: string): void {
-    this.menuService.deleteMenuItem(id).subscribe(
-      () => {
-        this.menuItems = this.menuItems.filter((item) => item.id !== id);
-      },
-      (error) => {
-        console.error('Error deleting menu item:', error);
-      }
-    );
-  }
-*/
 
 }

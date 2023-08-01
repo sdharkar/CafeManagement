@@ -1,0 +1,35 @@
+<!--signup-->
+
+
+<div class="container-fluid" style="padding: 80px;">
+    
+    <div class="col-xl-6 offset-3">
+        <div class="card-body p-md-5 text-black shadow-lg">
+        <h1 class="mb-5">Signup</h1>
+        <form (ngSubmit)="onSubmit()">
+        <div class="row">
+            
+            <div class="form-outline">
+                <input type="text" id="form3Example1m" class="form-control form-control-lg" required [(ngModel)]="user.name" name="name"/>
+                <label class="form-label" for="form3Example1m">Name</label>
+            </div>
+        
+        <div class="form-outline mb-4">
+            <input type="email" id="form3Example97" class="form-control form-control-lg" required [(ngModel)]="user.email" name="email"/>
+            <label class="form-label" for="form3Example97">Email</label>
+        </div>
+            
+            <div class="form-outline">
+                <input type="password" id="form3Example1n" class="form-control form-control-lg" required [(ngModel)]="user.password" name="password"/>
+                <label class="form-label" for="form3Example1n">Password</label>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-end pt-4">
+            <button type="button" class="btn btn-light btn-lg">Reset all</button>
+            <button type="submit" class="btn btn-warning btn-lg ms-2">Register</button>
+        </div>
+        </form>
+        </div>
+    </div>
+</div>

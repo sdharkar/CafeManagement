@@ -6,12 +6,6 @@
         <form (ngSubmit)="onSubmit()">
 
             <div class="form-group">
-                <label for="ids">Id</label>
-                <input type="text" class="form-control" id="id" [(ngModel)]="inventoryItem.id" name="id">
-            </div>
-
-
-            <div class="form-group">
                 <label for="name">Item Name</label>
                 <input type="text" class="form-control" id="name" [(ngModel)]="inventoryItem.name" name="itemName">
             </div>
@@ -20,7 +14,7 @@
                 <label for="quantity">Quantity</label>
                 <input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItem.quantity" name="quantity">
             </div><br>
-            <button class="btn btn-success" type="submit">Submit</button>
+            <button class="btn btn-success cafe_btn cafe_btn" type="submit">Submit</button>
         </form>
     </div>
 </div>

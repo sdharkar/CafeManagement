@@ -1,7 +1,7 @@
 /* inventory.component.css */
 .content {
     background-color: #f4f4f4;
-    padding: 20px;
+    padding: 8px 16px;
     border-radius: 10px;
 }
 
@@ -9,4 +9,8 @@
     padding: 20px;
     background-color: #EEEEEE;
     border-radius: 10px;
+}
+
+.cafe_btn{
+    padding: 4px 8px;
 }
