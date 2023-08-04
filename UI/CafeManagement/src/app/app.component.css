@@ -25,3 +25,17 @@ margin-top: 10px;
 .cafe_btn{
     padding: 4px 8px;
 }
+
+app-footer {
+    margin-top: bottom;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}  
+

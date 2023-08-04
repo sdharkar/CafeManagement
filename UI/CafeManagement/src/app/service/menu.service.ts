@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MenuItem } from 'src/model/menu-item.model';
+import { Order } from 'src/model/order.model';
 
 
 @Injectable({
@@ -37,6 +38,10 @@ export class MenuService {
   //Delete menu item
   deleteMenuItem(id: string): Observable<void>{
     return this.http.delete<void>(`${this.baseUrl1}/${id}`);
+  }
+
+  addToCart(id: string): Observable<Order>{
+    return this.http.get<Order>(`${this.baseUrl1}/cart/${id}`);
   }
   
 }

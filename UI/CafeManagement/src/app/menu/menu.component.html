@@ -25,8 +25,8 @@
                     <a *ngIf="login.isLoggenIn()" type="buttton" class="btn btn-primary" (click)="pay(coupon.code,coupon.category,coupon.provider,coupon.description)">GRAB DEAL</a>
                     -->
                     <div class="card-group" style="width:auto;">
-                        <button class="btn btn-primary align-center">Order now</button>
-                        <!--<button class="btn btn-secondary align-center">Add to cart</button>-->
+                        <button class="btn btn-primary align-center cafe_btn mx-2">Order now</button>
+                        <button class="btn btn-secondary align-center cafe_btn" (click)="addToCart(item.id)">Add to cart</button>
                     </div>
                 </div>
             </div>
