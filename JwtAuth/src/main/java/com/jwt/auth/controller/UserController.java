@@ -31,8 +31,15 @@ public class UserController {
 		return userService.registerNewUser(user);
 	}
 
-	@GetMapping("{/foradmin}")
+	@GetMapping("/foradmin")
 	public String forAdmin() {
 		return "This URL is only accessible to admin";
 	}
+	
+	@GetMapping("/foruser")
+	public String forUser() {
+		return "This URL is only accessible to user";
+	}
+	
+	
 }
