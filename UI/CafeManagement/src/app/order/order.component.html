@@ -1,28 +1,59 @@
-<div>
-<h2>Place New Order</h2>
-<form #orderForm="ngForm">
-<!--<form (ngSubmit)="placeOrder()" #orderForm="ngForm">-->
-    <div>
-    <label for="customerName">Customer Name:</label>
-    <!--<input type="text" id="customerName" name="customerName" required [(ngModel)]="newOrder.customerName">-->
+<div class="content">
+    <h2>Order</h2>
+
+<ng-container *ngIf="true">
+    <div class="container" style="border-radius: 10px;">
+        <div class="card-table">
+            <div class="order-menu">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Menu Item</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Pizza</th>
+                            <th>250</th>
+                            <th><button class="btn btn-outline-danger cafe_btn">Delete</button></th>
+                        </tr>
+                        <tr>
+                            <th>Pizza</th>
+                            <th>250</th>
+                            <th><button class="btn btn-outline-danger cafe_btn">Delete</button></th>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total Amount:</th>
+                            <th>500</th>
+                            <th><button class="btn btn-outline-success cafe_btn" routerLink="/payment" >CheckOut</button></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
     </div>
-    <div>
-    <label for="orderDetails">Order Details:</label>
-    <!--<textarea id="orderDetails" name="orderDetails" required [(ngModel)]="newOrder.orderDetails"></textarea>-->
+</ng-container>
+
+
+
+
+
+<ng-container *ngIf="false">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title"> Orders in cart</h5>
+        </div>
+        <div class="center">
+            <img src="https://images.unsplash.com/photo-1509315703195-529879416a7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b3JkZXIlMjBmb29kfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="">
+            <h4>You have not ordered yet!!!</h4>
+            <h6>Order the food now...</h6>
+            <button class="btn btn-primary cafe_btn" routerLink="/menu">Order Now</button>
+        </div>
     </div>
-    <!-- Add other order properties here -->
-    <button type="submit" [disabled]="!orderForm.valid">Place Order</button>
-</form>
+</ng-container>
+
 </div>
-<!--
-<div>
-<h2>Orders</h2>
-<div *ngFor="let order of orders">
-    <h3>{{ order.customerName }}</h3>
-    <p>Order Details: {{ order.orderDetails }}</p>
-    <p>Status: {{ order.status }}</p>
-  
-    <button (click)="updateOrderStatus(order.id, 'Shipped')">Mark as Shipped</button>
-    <button (click)="cancelOrder(order.id)">Cancel Order</button>
-</div>
-</div>-->

@@ -12,6 +12,8 @@ import { DashboardContentComponent } from './dashboard/dashboard-content/dashboa
 import { UpdateMenuComponent } from './dashboard/update-menu/update-menu.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { PaymentComponent } from './payment/payment.component';
+import { DashboardPaymentComponent } from './dashboard/dashboard-payment/dashboard-payment.component';
 
 
 const routes: Routes = [
@@ -26,7 +28,9 @@ const routes: Routes = [
   {path: 'dashboard-content', component: DashboardContentComponent},
   {path: 'update-menu/:id', component: UpdateMenuComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent}
+  {path: 'signup', component: SignupComponent},
+  {path:'payment', component: PaymentComponent},
+  {path:'dashboard-payment', component: DashboardPaymentComponent}
 ];
 
 @NgModule({

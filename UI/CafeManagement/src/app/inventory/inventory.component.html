@@ -19,7 +19,7 @@
             </div>
             <br>
 
-            <button class="btn btn-success cafe_btn" type="submit">Submit</button>
+            <button class="btn btn-outline-success cafe_btn" type="submit">Submit</button>
         </form>
     </div>
 </div>
@@ -41,8 +41,8 @@
                     <td>{{item.quantity}}</td>
                     <td>
                         
-                        <button class="btn btn-primary cafe_btn mx-2" (click)="updateInventoryItem(item.id)" routerLink="/update-inventory">Update</button>
-                        <button class="btn btn-danger cafe_btn" (click)="confirmDelete(item.id)">Delete</button>
+                        <button class="btn btn-outline-primary cafe_btn mx-2" (click)="updateInventoryItem(item.id)" routerLink="/update-inventory">Update</button>
+                        <button class="btn btn-outline-danger cafe_btn" (click)="confirmDelete(item.id)">Delete</button>
                     </td>
                 </tr>
             </tbody>

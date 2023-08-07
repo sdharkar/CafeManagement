@@ -1,14 +1,57 @@
-/* You can add custom styles for the order page here */
-/* For example, add some spacing and style for the buttons */
-
-h2 {
-margin-top: 20px;
+.card{
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
 }
 
-form, div {
-margin: 10px;
+.center img{
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    height: 162px;
+    width: 250px;
+    margin: 20px 0px;
 }
 
-button {
-margin-right: 10px;
+.center{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.card-table{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: none;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0,2);
+    border-radius: 10px
+}
+
+/* .center .btn{
+    font-size: 14px !important;
+    margin-top: 20px !important;
+    font-weight: 400;
+    padding: 12px 72px;
+    border-radius: 10px !important;
+} */
+
+
+.content {
+    background-color: #f4f4f4;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+h2{
+    text-align: center;
+    padding: 20px;
 }

@@ -29,6 +29,7 @@ import { UpdateMenuComponent } from './dashboard/update-menu/update-menu.compone
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CartComponent } from './cart/cart.component';
     UpdateMenuComponent,
     LoginComponent,
     SignupComponent,
-    CartComponent
+    CartComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

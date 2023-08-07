@@ -1,47 +1,96 @@
 server:
   port: 9600
-  
-spring:
-  application:
-    name: Api-Gateway
-    
-  cloud:
-    gateway:
-      routes:
-      - id: USER-SERVICE
-        uri: http://localhost:9614
-        predicates:
-        - Paths=/api/user/**
-        
-      - id: MENUITEM-SERVICE
-        uri: http://localhost:9610
-        predicates:
-        - Paths=/api/menu/items/**  
-        
-      - id: INVENTORY-SERVICE
-        uri: http://localhost:9612
-        predicates:
-        - Paths=/api/inventory/item/**
-        
-      - id: ORDER-SERVICE
-        uri: http://localhost:9611
-        predicates:
-        - Paths=/api/orders/**
-        
-      - id: PAYMENT-SERVICE
-        uri: http://localhost:9613
-        predicates:
-        - Paths=/api/payment/**
-          
-    
+
 eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761
+    client:
+        register-with-eureka: true
+        fetch-registry: true
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+    instance:
+        hostname: localhost
+
+spring:
+    application:
+        name: api-gateway
+        
+    cloud:
+        gateway:
+            routes:
+                - id: flight-service
+                  uri: lb://flight-service
+                  predicates:
+                    - Path=/api/flights/**
+                #   filters:
+                #     - name: CircuitBreaker
+                #       args:
+                #         name: customer-service  
+                #         fallbackuri: forward:/customerServiceFallback
+
+                - id: airport-service
+                  uri: lb://airport-service
+                  predicates:
+                    - Path=/api/airports/**
+                #   filters:
+                #     - name: CircuitBreaker
+                #       args:
+                #         name: product-service  
+                #         fallbackuri: forward:/productServiceFallback
+
+                - id: passenger-details-service
+                  uri: lb://passenger-details-service
+                  predicates:
+                    - Path=/api/passengers/**
+                #   filters:
+                #     - name: CircuitBreaker
+                #       args:
+                #         name: product-service  
+                #         fallbackuri: forward:/productServiceFallback
+
+                # user-management-service
+                - id: user-management-service
+                  uri: lb://user-management-service
+                  predicates:
+                    - Path=/**
+                #   filters:
+                #     - name: CircuitBreaker
+                #       args:
+                #         name: product-service  
+                #         fallbackuri: forward:/productServiceFallback
+
+                - id: booking-details
+                  uri: lb://booking-details
+                  predicates:
+                    - Path=/api/bookings/**
+                #   filters:
+                #     - name: CircuitBreaker
+                #       args:
+                #         name: product-service  
+                #         fallbackuri: forward:/productServiceFallback
+
+                - id: check-in-service
+                  uri: lb://check-in-service
+                  predicates:
+                    - Path=/api/checkin**
+                #   filters:
+                #     - name: CircuitBreaker
+                #       args:
+                #         name: product-service  
+                #         fallbackuri: forward:/productServiceFallback
+
+# hystrix:
+#     command:
+#         fallbackcmd:
+#             execution:
+#                 isolation:
+#                     thread:
+#                         timeoutInMillieseconds: 5000
+
+# management:
+#     endpoints:
+#         web:
+#             exposure:
+#                 include: hystrix.stream
       
       
     

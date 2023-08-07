@@ -1,11 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {Payment} from 'src/model/payment.model'
+import {Payment} from 'src/model/payment.model';
+
+//payment window
+function _window() : any{
+  return window;
+}
 
 @Injectable({
   providedIn: 'root'
 })
+
+
+
 export class PaymentService {
 
   private baseUrl4 = 'http://localhost:9613/api/payment';
@@ -25,5 +33,10 @@ export class PaymentService {
   //Update payment status
   updatePaymentStatus(id: string, status: string): Observable<Payment>{
     return this.http.put<Payment>(`${this.baseUrl4}/${id}/status`,{status});
+  }
+
+  //Payment window
+  get nativeWindow(): any{
+    return _window();
   }
 }
