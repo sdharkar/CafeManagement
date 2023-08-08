@@ -44,7 +44,7 @@ public class WebSecurityConfiguration{
 	    	httpSecurity.cors().and()
             .csrf().disable()
             .authorizeRequests()
-            .requestMatchers("/api/jwt/auth").permitAll()
+            .requestMatchers("/api/jwt/auth/authenticate", "/api/jwt/user").permitAll()
             .requestMatchers(HttpHeaders.ALLOW).permitAll()
             .anyRequest().authenticated()
             .and()

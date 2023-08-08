@@ -18,7 +18,7 @@ import { InventoryService } from './service/inventory.service';
 import { OrderService } from './service/order.service';
 import { PaymentService } from './service/payment.service';
 import { UserService } from './service/user.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { InventoryComponent } from './inventory/inventory.component';
 import { DashboardMenuComponent } from './dashboard/dashboard-menu/dashboard-menu.component';
@@ -30,6 +30,12 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { UserAuthService } from './service/user-auth.service';
+import { RouterModule } from '@angular/router';
+import { AuthGuard} from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+
 
 @NgModule({
   declarations: [
@@ -53,20 +59,29 @@ import { PaymentComponent } from './payment/payment.component';
     LoginComponent,
     SignupComponent,
     CartComponent,
-    PaymentComponent
+    PaymentComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [
     MenuService,
     InventoryService,
     OrderService,
     PaymentService,
-    UserService
+    UserService,
+    UserAuthService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    }
   ],
   bootstrap: [AppComponent]
 })

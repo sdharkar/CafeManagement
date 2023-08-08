@@ -17,17 +17,17 @@
                 <a class="nav-link" routerLink="/order">Order</a>
                 </li>
                 <li class="nav-item">
+                <a class="nav-link" routerLink="/profile" *ngIf="userService.roleMatch(['Admin'])">Profile</a>
                 <a class="nav-link" routerLink="/profile">Profile</a>
                 </li>
                 <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard" *ngIf="userService.roleMatch(['User'])">Dashboard</a>
                 <a class="nav-link" routerLink="/dashboard">Dashboard</a>
                 </li>
             </ul>
             <form class="d-flex">
-                <button class="btn btn-success cafe_btn" routerLink="/login">Login</button>
-                <button  type="buttton" class="btn btn-danger cafe_btn">logout</button>
-            <!--<button *ngIf="!login.isLoggenIn()" class="btn btn-success cafe_btn" routerLink="/jwtlogin">Login</button>-->
-            <!--<button *ngIf="login.isLoggenIn()" type="buttton" class="btn btn-danger cafe_btn" (click)="logout()" routerLink="/coupons">logout</button>-->
+                <button *ngIf="!isLoggedIn()" class="btn btn-outline-success cafe_btn" routerLink="/login">Login</button>
+                <button *ngIf="isLoggedIn()" type="buttton" class="btn btn-outline-danger cafe_btn" (click)="logout()">logout</button>
             </form>
         </div>
     </div>

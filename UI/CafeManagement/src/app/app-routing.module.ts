@@ -14,10 +14,12 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { PaymentComponent } from './payment/payment.component';
 import { DashboardPaymentComponent } from './dashboard/dashboard-payment/dashboard-payment.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 
 const routes: Routes = [
-  {path:'', component: HomePageComponent},
+  {path:'home', component: HomePageComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'menu', component: MenuComponent},
   {path: 'order', component: OrderComponent},
   {path: 'profile', component: UserProfileComponent},
@@ -30,7 +32,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path:'payment', component: PaymentComponent},
-  {path:'dashboard-payment', component: DashboardPaymentComponent}
+  {path:'dashboard-payment', component: DashboardPaymentComponent},
+  {path:'forbidden', component: ForbiddenComponent}
 ];
 
 @NgModule({

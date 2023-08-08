@@ -20,20 +20,20 @@ export class SignupComponent implements OnInit {
   }
 
   signup(){
-    this.userService.createUser(this.user).subscribe( response => {
-      console.log("signup successfully!!!");
-      this.goToLogin();
-      //Dialog box
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Signup successfully!!!',
-        showConfirmButton: false,
-        timer: 1500
-      })
+    // this.userService.createUser(this.user).subscribe( response => {
+    //   console.log("signup successfully!!!");
+    //   this.goToLogin();
+    //   //Dialog box
+    //   Swal.fire({
+    //     position: 'center',
+    //     icon: 'success',
+    //     title: 'Signup successfully!!!',
+    //     showConfirmButton: false,
+    //     timer: 1500
+    //   })
 
-    },
-    error => console.error('Error in signup'));
+    // },
+    // error => console.error('Error in signup'));
   }
 
   goToLogin() {

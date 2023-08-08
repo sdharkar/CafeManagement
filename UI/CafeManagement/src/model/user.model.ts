@@ -1,6 +1,6 @@
 export interface User{
     id: string;
-    name: string;
+    username: string;
     email: string;
     password: string;
     role: string;
@@ -9,7 +9,7 @@ export interface User{
 
 export class User{
     id!: string;
-    name!: string;
+    username!: string;
     email!: string;
     password!: string;
     role!: string;
