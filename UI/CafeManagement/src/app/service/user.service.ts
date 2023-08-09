@@ -11,7 +11,7 @@ export class UserService {
   //URL for jwt authentication 
   private baseUrl6 = 'http://localhost:9617/api/jwt/auth';
 
-  //private baseUrl5='http://localhost:9614/api/user';
+  private baseUrl7 = 'http://localhost:9617/api/jwt/user'
 
   //To authenticate end points
   requestHeader = new HttpHeaders(
@@ -21,54 +21,28 @@ export class UserService {
   )
 
   constructor(private http: HttpClient,
-              private userAuthService :UserAuthService
+              private userAuthService :UserAuthService,
+              private userService :UserService
               ) { }
 
-  // //Create user
-  // createUser(user: User): Observable<User>{
-  //   return this.http.post<User>(this.baseUrl5, user);
-  // }
+  //Signup
+  registerNewUser(user: User): Observable<User>{
+    return this.http.post<User>(this.baseUrl7,user);
+  }
 
-  // //Get user by id
-  // getUserById(id:number): Observable<User>{
-  //   return this.http.get<User>(`${this.baseUrl5}/${id}`);
-  // }
-
-  // //Update user
-  // updateUser(id: number, user: User): Observable<User>{
-  //   return this.http.put<User>(`${this.baseUrl5}/${id}`, user);
-  // }
-
-  // //Delete user
-  // deleteUser(id: number): Observable<void>{
-  //   return this.http.delete<void>(`${this.baseUrl5}/${id}`);
-  // }
-  
-
+  //login
   public login(loginData: any){
     return this.http.post(this.baseUrl6 + "/authenticate", loginData, {headers: this.requestHeader});
   }
 
-  //public roleMatch(allowedRoles):boolean
-  // public roleMatch(allowedRoles:string[]):Boolean{
-  //   let isMatch = false;
-  //   const userRoles:any= this.userAuthService.getRoles();
 
-  //   if(userRoles != null && userRoles){
-  //     for(let i=0; i< userRoles.length; i++){
-  //       for(let j=0; j< allowedRoles.length; j++){
+  public forUser(){
+    return this.http.get(this.baseUrl7 + '/foruser', {responseType:"text"});
+  }
 
-  //         if(userRoles[i].roleName === allowedRoles[j]){
-  //           isMatch = true;
-  //           return isMatch;
-  //         }else {
-  //           return isMatch;
-  //         }
-
-  //       }
-  //     }
-  //   }
-  // }
+  public forAdmin(){
+    return this.http.get(this.baseUrl7 + '/foradmin', {responseType:"text"});
+  }
 
   public roleMatch(allowedRoles: string[]): boolean {
     let isMatch = false;

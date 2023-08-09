@@ -15,6 +15,7 @@ import { SignupComponent } from './signup/signup.component';
 import { PaymentComponent } from './payment/payment.component';
 import { DashboardPaymentComponent } from './dashboard/dashboard-payment/dashboard-payment.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
@@ -22,8 +23,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'menu', component: MenuComponent},
   {path: 'order', component: OrderComponent},
-  {path: 'profile', component: UserProfileComponent},
-  {path: 'dashboard', component: AdminDashboardComponent},
+  {path: 'profile', component: UserProfileComponent, canActivate:[AuthGuard], data:{roles:['User']}},
+  {path: 'dashboard', component: AdminDashboardComponent, canActivate:[AuthGuard], data:{roles:['Admin']} },
   {path: 'inventory', component: InventoryComponent},
   {path: 'update-inventory/:id', component: UpdateInventoryComponent},
   {path: 'dashboard-menu', component: DashboardMenuComponent},
