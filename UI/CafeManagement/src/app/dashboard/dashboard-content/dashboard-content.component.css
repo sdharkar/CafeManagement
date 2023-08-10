@@ -10,3 +10,26 @@
     background-color: #C7E9B0;
     border-radius: 10px;
 }
+
+.content {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.container-fluid{
+    padding: 20px;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+}
+
+.cafe_btn{
+    padding: 4px 8px;
+}
+
+.dash_dispaly{
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}

@@ -1,55 +1,61 @@
 <div class="content">
     <h3>Manage Inventory </h3>
     <!-- Add dashboard content here -->
-    <div class="menu-container lh-base">
-
-<div class="container-fluid">
-    <div class="col-md-6 offset-md-3">
-        <h3>Create Inventory Item</h3>
-        <form (ngSubmit)="onSubmit()">
-
-            <div class="form-group">
-                <label for="name">Item Name</label>
-                <input type="text" class="form-control" id="name" [(ngModel)]="inventoryItem.name" name="itemName" placeholder="Enter name">
-            </div>
-
-            <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItem.quantity" name="quantity" placeholder="Enter quanitiy of a item">
-            </div>
-            <br>
-
-            <button class="btn btn-outline-success cafe_btn" type="submit">Submit</button>
-        </form>
-    </div>
-</div>
 
 
-    <div class="container-lg">
-    <h3>Inventory</h3>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Item name</th>
-                    <th>Quantity</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of inventoryItems">
-                    <td>{{item.name}}</td>
-                    <td>{{item.quantity}}</td>
-                    <td>
-                        
-                        <button class="btn btn-outline-primary cafe_btn mx-2" (click)="updateInventoryItem(item.id)" routerLink="/update-inventory">Update</button>
-                        <button class="btn btn-outline-danger cafe_btn" (click)="confirmDelete(item.id)">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        
+    <div class="container-fluid dash_dispaly" >
+        <button class="btn btn-outline-info cafe_btn mx-3" (click)="toggleAddInventory()">Add new inventory item</button>
     </div>
 
-</div>
+    <div class="container-fluid" *ngIf="showAddInventory">
+        <div class="col-md-6 offset-md-3">
+            <h3  class="mb-5">Create Inventory Item</h3>
+            <form (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="name">Item Name</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="inventoryItem.name" name="itemName" placeholder="Enter name">
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItem.quantity" name="quantity" placeholder="Enter quanitiy of a item">
+                </div>
+                <br>
+
+                <button class="btn btn-outline-success cafe_btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+        <div class="container-lg">
+        <h3>Inventory</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Item name</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of inventoryItems">
+                        <td>{{item.name}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>
+                            
+                            <button class="btn btn-outline-primary cafe_btn mx-2" (click)="updateInventoryItem(item.id)" routerLink="/update-inventory">Update</button>
+                            <button class="btn btn-outline-danger cafe_btn" (click)="confirmDelete(item.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
 </div>
 
 

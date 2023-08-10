@@ -1,70 +1,74 @@
 <div class="content">
     <h3>Manage Menu</h3>
 
-
-<div class="container-lg">
-    <div class="col-md-6 offset-md-3">
-        <h3 style="align-items: center;">Create Menu Item</h3>
-        <form (ngSubmit)="onSubmit()">
-
-            <div class="form-group">
-                <label for="name">Item Name</label>
-                <input type="text" class="form-control" id="name" [(ngModel)]="menuItem.name" name="itemName" placeholder="enter item name">
-            </div>
-
-            <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" [(ngModel)]="menuItem.description" name="description" placeholder="Enter description of item">
-            </div>
-
-            <div class="form-group">
-                <label for="price">Price</label>
-                <input type="text" class="form-control" id="price" [(ngModel)]="menuItem.price" name="price" placeholder="Enter price">
-            </div>
-
-            <div class="form-group">
-                <label for="category">Category</label>
-                <input type="text" class="form-control" id="category" [(ngModel)]="menuItem.category" name="category" placeholder="Enter category of item">
-            </div>
-
-            <div class="form-group">
-                <label for="available">Available</label>
-                <input type="boolean" class="form-control" id="available" [(ngModel)]="menuItem.available" name="available" placeholder="Enter availablity of item">
-            </div>
-            <br>
-            <button class="btn btn-success cafe_btn" type="submit">Submit</button>
-        </form>
+    <div class="container-fluid dash_dispaly" >
+        <button class="btn btn-outline-info cafe_btn mx-3" (click)="toggleAddMenuItem()">Add new menu item</button>
     </div>
-</div>
-<br>
 
-<div class="container-fluid">
-<h3>Menu</h3>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Item Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Category</th>
-                <th>Available</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of menuItems">
-                <td>{{item.name}}</td>
-                <td>{{item.description}}</td>
-                <td>{{item.price}}</td>
-                <td>{{item.category}}</td>
-                <td>{{item.available}}</td>
-                <td>
-                    <button class="btn btn-primary cafe_btn mx-2" (click)="updateMenuItem(item.id)">Update</button>
-                    <button class="btn btn-danger cafe_btn" (click)="confirmDelete(item.id)">Delete</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+
+    <div class="container-lg" *ngIf="showAddMenuItem">
+        <div class="col-md-6 offset-md-3">
+            <h3  class="mb-5" >Create Menu Item</h3>
+            <form (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="name">Item Name</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="menuItem.name" name="itemName" placeholder="enter item name">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" [(ngModel)]="menuItem.description" name="description" placeholder="Enter description of item">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control" id="price" [(ngModel)]="menuItem.price" name="price" placeholder="Enter price">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text" class="form-control" id="category" [(ngModel)]="menuItem.category" name="category" placeholder="Enter category of item">
+                </div>
+
+                <div class="form-group">
+                    <label for="available">Available</label>
+                    <input type="boolean" class="form-control" id="available" [(ngModel)]="menuItem.available" name="available" placeholder="Enter availablity of item">
+                </div>
+                <br>
+                <button class="btn btn-outline-success cafe_btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <br>
+
+    <div class="container-fluid">
+    <h3>Menu</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Available</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of menuItems">
+                    <td>{{item.name}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.available}}</td>
+                    <td>
+                        <button class="btn btn-primary cafe_btn mx-2" (click)="updateMenuItem(item.id)">Update</button>
+                        <button class="btn btn-danger cafe_btn" (click)="confirmDelete(item.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 

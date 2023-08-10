@@ -96,6 +96,12 @@ export class InventoryComponent implements OnInit{
     });
   }
 
+  //display content
+  showAddInventory: boolean = false;
+  toggleAddInventory(){
+    this.showAddInventory = !this.showAddInventory;
+  }
+
 
 
   

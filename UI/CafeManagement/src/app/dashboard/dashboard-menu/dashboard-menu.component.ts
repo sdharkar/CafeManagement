@@ -96,5 +96,11 @@ export class DashboardMenuComponent implements OnInit {
     this.router.navigate(['update-menu', id]);
   }
 
+  //display content
+  showAddMenuItem: boolean = false;
+  toggleAddMenuItem(){
+    this.showAddMenuItem = !this.showAddMenuItem;
+  }
+
 
 }

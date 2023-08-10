@@ -6,13 +6,157 @@
             </div>
         </div>
     </div>
+    
     <!-- Add dashboard content here -->
-    <div class="menu-container lh-base">
-        <app-dashboard-menu></app-dashboard-menu>
-    </div>
+<div class="menu-container lh-base">
+        
+<!--Dashboard menu-->
+        <div class="content">
+            <h3>Manage Menu</h3>
+
+            <div class="container-fluid dash_dispaly" >
+                <button class="btn btn-outline-info cafe_btn mx-3" (click)="toggleAddMenuItem()">Add new menu item</button>
+                <button class="btn btn-outline-info cafe_btn" (click)="toggleAllMenuItem()">Display all menu items</button>
+            </div>
+
+
+            <div class="container-lg" *ngIf="showAddMenuItem">
+                <div class="col-md-6 offset-md-3">
+                    <h3  class="mb-5" >Create Menu Item</h3>
+                    <form (ngSubmit)="onSubmit()">
+
+                        <div class="form-group">
+                            <label for="name">Item Name</label>
+                            <input type="text" class="form-control" id="name" [(ngModel)]="menuItem.name" name="itemName" placeholder="enter item name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text" class="form-control" id="description" [(ngModel)]="menuItem.description" name="description" placeholder="Enter description of item">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="text" class="form-control" id="price" [(ngModel)]="menuItem.price" name="price" placeholder="Enter price">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <input type="text" class="form-control" id="category" [(ngModel)]="menuItem.category" name="category" placeholder="Enter category of item">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="available">Available</label>
+                            <input type="boolean" class="form-control" id="available" [(ngModel)]="menuItem.available" name="available" placeholder="Enter availablity of item">
+                        </div>
+                        <br>
+                        <button class="btn btn-outline-success cafe_btn" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <br>
+
+            <div class="container-fluid" *ngIf="showAllMenuItem">
+            <h3>Menu</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Available</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of menuItems">
+                            <td>{{item.name}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.price}}</td>
+                            <td>{{item.category}}</td>
+                            <td>{{item.available}}</td>
+                            <td>
+                                <button class="btn btn-primary cafe_btn mx-2" (click)="updateMenuItem(item.id)">Update</button>
+                                <button class="btn btn-danger cafe_btn" (click)="confirmDelete(item.id)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</div>
     <br>
-    <div class="container-fluid">
-        <app-inventory></app-inventory>
+<div class="container-fluid lh-base">
+        
+<!--inventory dashboard-->
+        <div class="content">
+            <h3>Manage Inventory </h3>
+                
+            <div class="container-fluid dash_dispaly" >
+                <button class="btn btn-outline-info cafe_btn mx-3" (click)="toggleAddInventory()">Add new inventoryitem</button>
+                <button class="btn btn-outline-info cafe_btn" (click)="toggleAllInventory()">Display all inventory items</button>
+            </div>
+
+            <div class="container-fluid" *ngIf="showAddInventory">
+                <div class="col-md-6 offset-md-3">
+                    <h3  class="mb-5">Create Inventory Item</h3>
+                    <form (ngSubmit)="onSubmitInventory()">
+
+                        <div class="form-group">
+                            <label for="name">Item Name</label>
+                            <input type="text" class="form-control" id="name" [(ngModel)]="inventoryItem.name" name="itemName" placeholder="Enter name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="text" class="form-control" id="quantity" [(ngModel)]="inventoryItem.quantity" name="quantity" placeholder="Enter quanitiy of a item">
+                        </div>
+                        <br>
+
+                        <button class="btn btn-outline-success cafe_btn" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+                <div class="container-lg" *ngIf="showAllInventory">
+                <h3>Inventory</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Item name</th>
+                                <th>Quantity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of inventoryItems">
+                                <td>{{item.name}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td>
+                                    
+                                    <button class="btn btn-outline-primary cafe_btn mx-2" (click)="updateInventoryItem(item.id)" routerLink="/update-inventory">Update</button>
+                                    <button class="btn btn-outline-danger cafe_btn" (click)="confirmDeleteInventory(item.id)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+
     </div>
 </div>
+
+
+
+
+
+
+
+
+
 
