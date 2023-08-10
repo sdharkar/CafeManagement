@@ -16,14 +16,20 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.stereotype.Component;
 
 import com.google.common.net.HttpHeaders;
 import com.jwt.auth.service.JwtService;
 
+import lombok.AllArgsConstructor;
+
+
+@Component
+@AllArgsConstructor
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class WebSecurityConfiguration{
+public class WebSecurityConfiguration {
 	
 	 	@Autowired
 	    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
@@ -33,6 +39,8 @@ public class WebSecurityConfiguration{
 
 	    @Autowired
 	    private UserDetailsService jwtService;
+	    
+	   
 	    
 	    
 	    @Bean
@@ -60,7 +68,7 @@ public class WebSecurityConfiguration{
 	        return new BCryptPasswordEncoder();
 	    }
 
-	    @Autowired
+	    @Bean
 	    public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 	        authenticationManagerBuilder.userDetailsService(jwtService).passwordEncoder(passwordEncoder());
 	    }

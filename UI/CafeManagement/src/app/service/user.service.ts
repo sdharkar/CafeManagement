@@ -21,8 +21,7 @@ export class UserService {
   )
 
   constructor(private http: HttpClient,
-              private userAuthService :UserAuthService,
-              private userService :UserService
+              private userAuthService :UserAuthService
               ) { }
 
   //Signup
