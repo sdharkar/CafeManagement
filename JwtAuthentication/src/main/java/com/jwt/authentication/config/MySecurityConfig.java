@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
@@ -17,7 +18,7 @@ import com.jwt.authentication.service.CustomUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
-public class MySecurityConfig{
+public class MySecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
 	private CustomUserDetailsService customUserDetailsService;
@@ -31,7 +32,7 @@ public class MySecurityConfig{
 			.cors()
 			.disable()
 			.authorizeRequests()
-			.requestMatchers("/token").permitAll()
+			.antMatchers("/token").permitAll()
 			.anyRequest().authenticated()
 			.and()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
