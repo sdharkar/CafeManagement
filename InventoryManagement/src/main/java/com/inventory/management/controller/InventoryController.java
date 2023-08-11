@@ -2,6 +2,8 @@ package com.inventory.management.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,31 +25,65 @@ public class InventoryController {
 	
 	@Autowired
     private InventoryItemRepository inventoryItemRepository;
+	
+	Logger logger = LoggerFactory.getLogger(InventoryController.class);
 
     @PostMapping
     public InventoryItem createInventoryItem(@RequestBody InventoryItem inventoryItem) {
-        return inventoryItemRepository.save(inventoryItem);
+    	try {
+    		logger.info("Inventory item created successfully");
+    		return inventoryItemRepository.save(inventoryItem);
+    	} catch(Exception e) {
+    		logger.error("Failed to create inventory item",e);
+    	}
+		return inventoryItem;
     }
 
     @GetMapping
     public List<InventoryItem> getAllInventoryItems() {
-        return inventoryItemRepository.findAll();
+    	try {
+    		logger.info("Inventory item got successfully");
+    		 return inventoryItemRepository.findAll();
+    	} catch(Exception e) {
+    		logger.error("Failed to get inventory item",e);
+    	}
+		return null;
+       
     }
 
     @GetMapping("/{id}")
     public InventoryItem getInventoryItemById(@PathVariable String id) {
-        return inventoryItemRepository.findById(id).orElse(null);
+    	try {
+    		logger.info("Inventory item by id got successfully");
+    		return inventoryItemRepository.findById(id).orElse(null);
+    	} catch(Exception e) {
+    		logger.error("Failed to get inventory item by id",e);
+    	}
+		return null;
+        
     }
 
     @PutMapping("/{id}")
     public InventoryItem updateInventoryItem(@PathVariable String id, @RequestBody InventoryItem inventoryItem) {
-        inventoryItem.setId(id);
-        return inventoryItemRepository.save(inventoryItem);
+    	try {
+    		logger.info("Inventory item updated successfully");
+    		inventoryItem.setId(id);
+            return inventoryItemRepository.save(inventoryItem);
+    	} catch(Exception e) {
+    		logger.error("Failed to update inventory item",e);
+    	}
+		return inventoryItem;
+        
     }
 
     @DeleteMapping("/{id}")
     public void deleteInventoryItem(@PathVariable String id) {
-        inventoryItemRepository.deleteById(id);
+    	try {
+    		logger.info("Inventory item deleted successfully");
+    		inventoryItemRepository.deleteById(id);
+    	} catch(Exception e) {
+    		logger.error("Failed to delete inventory item",e);
+    	}
     }
 
 }

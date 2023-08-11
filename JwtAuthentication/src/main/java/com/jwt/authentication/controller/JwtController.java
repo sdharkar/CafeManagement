@@ -1,5 +1,7 @@
 package com.jwt.authentication.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,8 +34,16 @@ public class JwtController {
 	@Autowired
 	private JwtUtil jwtUtil;
 	
+	//logger initialization
+	Logger logger = LoggerFactory.getLogger(JwtController.class);
+	
 	@PostMapping("/token")
 	public ResponseEntity<?> generateToken(@RequestBody JwtRequest jwtRequest) throws Exception{
+
+	    try {  
+	    	logger.debug("generation token");
+	    	logger.info("Token generated successfully");
+        
 		System.out.println(jwtRequest);
 		
 		try {
@@ -55,6 +65,11 @@ public class JwtController {
 		//{"Token":"value"}
 		
 		return ResponseEntity.ok(new JwtResponse(token));
+		
+	    } catch(Exception e) {
+	    	logger.error("Failed to generate token",e);
+	    }
+		return null;
 		
 	}
 
