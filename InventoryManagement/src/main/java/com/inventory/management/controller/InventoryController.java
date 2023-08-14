@@ -18,9 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.inventory.management.model.InventoryItem;
 import com.inventory.management.repository.InventoryItemRepository;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api/inventory/item")
+@Api(tags = "Inventory API")
 public class InventoryController {
 	
 	@Autowired
@@ -29,6 +33,7 @@ public class InventoryController {
 	Logger logger = LoggerFactory.getLogger(InventoryController.class);
 
     @PostMapping
+    @ApiOperation("Create a inventory item")
     public InventoryItem createInventoryItem(@RequestBody InventoryItem inventoryItem) {
     	try {
     		logger.info("Inventory item created successfully");
@@ -40,6 +45,7 @@ public class InventoryController {
     }
 
     @GetMapping
+    @ApiOperation("Get a inventory item")
     public List<InventoryItem> getAllInventoryItems() {
     	try {
     		logger.info("Inventory item got successfully");
@@ -52,6 +58,7 @@ public class InventoryController {
     }
 
     @GetMapping("/{id}")
+    @ApiOperation("Get a inventory item by id")
     public InventoryItem getInventoryItemById(@PathVariable String id) {
     	try {
     		logger.info("Inventory item by id got successfully");
@@ -64,6 +71,7 @@ public class InventoryController {
     }
 
     @PutMapping("/{id}")
+    @ApiOperation("Update inventory item")
     public InventoryItem updateInventoryItem(@PathVariable String id, @RequestBody InventoryItem inventoryItem) {
     	try {
     		logger.info("Inventory item updated successfully");
@@ -77,6 +85,7 @@ public class InventoryController {
     }
 
     @DeleteMapping("/{id}")
+    @ApiOperation("Update a inventory item")
     public void deleteInventoryItem(@PathVariable String id) {
     	try {
     		logger.info("Inventory item deleted successfully");

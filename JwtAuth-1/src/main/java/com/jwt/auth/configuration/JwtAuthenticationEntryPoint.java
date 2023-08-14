@@ -3,14 +3,13 @@ package com.jwt.auth.configuration;
 import java.io.IOException;
 
 import javax.security.sasl.AuthenticationException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
-import jakarta.servlet.Filter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+
 
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint{

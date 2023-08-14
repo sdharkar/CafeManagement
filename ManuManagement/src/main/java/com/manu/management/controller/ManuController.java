@@ -18,9 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.manu.management.model.ManuItem;
 import com.manu.management.repository.ManuItemRepository;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api/menu/items")
+@Api(tags = "Menu API")
 public class ManuController {
 	
 	@Autowired
@@ -30,6 +34,7 @@ public class ManuController {
 	
 	
 		@PostMapping
+		@ApiOperation("Create a menu item")
 	    public ManuItem createManuItem(@RequestBody ManuItem manuItem) {
 			try {
 				 logger.info("Menu items created successfully");
@@ -41,46 +46,50 @@ public class ManuController {
 	    }
 
 	    @GetMapping
+	    @ApiOperation("Get all menu items")
 	    public List<ManuItem> getAllManuItems() {
 	    	try {
 	    		logger.info("Menu items got successfully");
 				 return manuItemRepository.findAll();
 			} catch(Exception e) {
-				logger.error("Failed to get menu items");
+				logger.error("Failed to get menu items",e);
 			}
 			return null;
 	    }
 
 	    @GetMapping("/{id}")
+	    @ApiOperation("Get menu item by id")
 	    public ManuItem getManuItemById(@PathVariable String id) {
 	    	try {
 	    		 logger.info("Menu item by id got successfully");
 	    		 return manuItemRepository.findById(id).orElse(null);
 			} catch(Exception e) {
-				logger.error("Failed to get menu item by id");
+				logger.error("Failed to get menu item by id",e);
 			}
 			return null;
 	    }
 
 	    @PutMapping("/{id}")
+	    @ApiOperation("Update menu item")
 	    public ManuItem updateManuItem(@PathVariable String id, @RequestBody ManuItem manuItem) {
 	    	try {
 	    		 logger.info("Menu item updated successfully");
 	    		 manuItem.setId(id);
 	    		 return manuItemRepository.save(manuItem);
 			} catch(Exception e) {
-				logger.error("Failed to update menu items");
+				logger.error("Failed to update menu items",e);
 			}
 			return manuItem;
 	    }
 
 	    @DeleteMapping("/{id}")
+	    @ApiOperation("Delete menu item")
 	    public void deleteMenuItem(@PathVariable String id) {
 	    	try {
 	    		logger.info("Menu item deleted successfully");
 	    		 manuItemRepository.deleteById(id);
 			} catch(Exception e) {
-				logger.error("Failed to detele menu items");
+				logger.error("Failed to detele menu items",e);
 			}
 	    }
 

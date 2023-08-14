@@ -1,5 +1,7 @@
 package com.jwt.auth.controller;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jwt.auth.model.User;
 import com.jwt.auth.service.UserService;
 
-import jakarta.annotation.PostConstruct;
+
 
 @RestController
 @CrossOrigin
