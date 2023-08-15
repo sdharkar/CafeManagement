@@ -10,7 +10,7 @@ import { Order } from 'src/model/order.model';
 })
 export class MenuService {
 
-  private baseUrl1 = 'http://localhost:9610/api/menu/items';
+  private baseUrl1 = 'http://localhost:9610/cafe/menu/item';
   
 
   constructor(private http: HttpClient) { } 

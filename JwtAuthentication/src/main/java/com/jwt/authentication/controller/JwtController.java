@@ -34,16 +34,10 @@ public class JwtController {
 	@Autowired
 	private JwtUtil jwtUtil;
 	
-	//logger initialization
-	Logger logger = LoggerFactory.getLogger(JwtController.class);
-	
 	@PostMapping("/token")
 	public ResponseEntity<?> generateToken(@RequestBody JwtRequest jwtRequest) throws Exception{
 
-	    try {  
-	    	logger.debug("generation token");
-	    	logger.info("Token generated successfully");
-        
+	    
 		System.out.println(jwtRequest);
 		
 		try {
@@ -66,10 +60,7 @@ public class JwtController {
 		
 		return ResponseEntity.ok(new JwtResponse(token));
 		
-	    } catch(Exception e) {
-	    	logger.error("Failed to generate token",e);
-	    }
-		return null;
+	    
 		
 	}
 
