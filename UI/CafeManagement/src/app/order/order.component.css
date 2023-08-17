@@ -61,24 +61,12 @@ h2{
     flex-direction: row;
 }
 
-.flex-item-left{
-    width: 700px;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.flex-item-right{
-    width: 400px;
-    padding: 10px;
-    border-radius: 10px;
-}
-
 table{
     border-radius: 10px;
 }
 
 .card{
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .pay_btn{
