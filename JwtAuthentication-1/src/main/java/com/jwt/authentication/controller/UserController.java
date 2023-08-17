@@ -21,26 +21,37 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-//	@PostConstruct
-//	public void initRolesAndUsers() {
-//		userService.initRolesAndUsers();
-//	}
+	@PostConstruct
+	public void initRolesAndUsers() {
+		try {
+			System.out.println("Init roles and users successfully");
+		userService.initRolesAndUsers();
+		}catch(Exception e) {
+			System.out.println("Failed to init Roles and Users");
+		}
+	}
 	
 	@PostMapping("/register")
 	public User registerNewUser(@RequestBody User user) {
+		try {
+			System.out.println("New user is registered successfully");
 		return userService.registerNewUser(user);
+		} catch(Exception e) {
+			System.out.println("Failed to register new user");
+		}
+		return user;
 	}
 
-//	@GetMapping("/foradmin")
+	@GetMapping("/foradmin")
 //	@PreAuthorize("hasRole('Admin')")
-//	public String forAdmin() {
-//		return "This URL is only accessible to admin";
-//	}
-//	
-//	@GetMapping("/foruser")
+	public String forAdmin() {
+		return "This URL is only accessible to admin";
+	}
+	
+	@GetMapping("/foruser")
 //	@PreAuthorize("hasRole('User')")
-//	public String forUser() {
-//		return "This URL is only accessible to user";
-//	}
+	public String forUser() {
+		return "This URL is only accessible to user";
+	}
 
 }

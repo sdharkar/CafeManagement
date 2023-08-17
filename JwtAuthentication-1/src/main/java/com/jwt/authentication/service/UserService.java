@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.jwt.authentication.model.Role;
@@ -20,41 +21,41 @@ public class UserService {
 	@Autowired
 	private RoleRepository roleRepository;
 	
-//	@Autowired
-//	private PasswordEncoder passwordEncoder;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
+	//Register new user
 	public User registerNewUser(User user) {
-		
 		Role role = roleRepository.findById("User").get();
-		
 		Set<Role> roles = new HashSet<>();
 		roles.add(role);
 		user.setRole(roles);
-		
-		//user.setPassword(getEncodedPassword(user.getPassword()));
+		user.setPassword(getEncodedPassword(user.getPassword()));
 		return userRepository.save(user);
 	}
 	
-//	public void initRolesAndUsers() {
-//		Role adminRole = new Role();
-//		adminRole.setRoleName("Admin");
-//		adminRole.setRoleDescription("Admin role");
-//		roleRepository.save(adminRole);
-//		
-//		Role userRole = new Role();
-//		userRole.setRoleName("User");
-//		userRole.setRoleDescription("Default role for newly created record");
-//		roleRepository.save(userRole);
-//		
-//		User adminUser = new User();
-//		adminUser.setFirstName("admin");
-//		adminUser.setLastName("admin");
-//		adminUser.setUserName("admin123");
-//		adminUser.setPassword(getEncodedPassword("admin@pass"));
-//		Set<Role> adminRoles = new HashSet<>();
-//		adminRoles.add(adminRole);
-//		adminUser.setRole(adminRoles);
-//		userRepository.save(adminUser);
+	public void initRolesAndUsers() {
+		//admin role
+		Role adminRole = new Role();
+		adminRole.setRoleName("Admin");
+		adminRole.setRoleDescription("Admin role");
+		roleRepository.save(adminRole);
+		
+		//user role
+		Role userRole = new Role();
+		userRole.setRoleName("User");
+		userRole.setRoleDescription("Default role for newly created record");
+		roleRepository.save(userRole);
+		
+		User adminUser = new User();
+		adminUser.setFirstName("admin");
+		adminUser.setLastName("admin");
+		adminUser.setUserName("admin123");
+		adminUser.setPassword(getEncodedPassword("admin@pass"));
+		Set<Role> adminRoles = new HashSet<>();
+		adminRoles.add(adminRole);
+		adminUser.setRole(adminRoles);
+		userRepository.save(adminUser);
 		
 //		User user = new User();
 //		user.setFirstName("ram");
@@ -65,10 +66,10 @@ public class UserService {
 //		userRoles.add(userRole);
 //		user.setRole(userRoles);
 //		userRepository.save(user);
-	//}
+	}
 	
-//	public String getEncodedPassword(String password) {
-//	    return passwordEncoder.encode(password);
-//	}
+	public String getEncodedPassword(String password) {
+	    return passwordEncoder.encode(password);
+	}
 
 }

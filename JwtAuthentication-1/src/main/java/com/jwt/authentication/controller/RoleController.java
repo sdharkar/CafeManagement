@@ -20,7 +20,13 @@ public class RoleController {
 	
 	@PostMapping("/create")
 	public Role createNewRole(@RequestBody Role role) {
+		try {
+			System.out.println("New role is created successfully");
 		return roleService.createNewRole(role);
+		} catch(Exception e) {
+			System.out.println("Failed to create role");
+		}
+		return role;
 	}
 
 }
