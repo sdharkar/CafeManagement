@@ -55,3 +55,34 @@ h2{
     text-align: center;
     padding: 20px;
 }
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-item-left{
+    width: 700px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.flex-item-right{
+    width: 400px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+table{
+    border-radius: 10px;
+}
+
+.card{
+    border-radius: 5px;
+}
+
+.pay_btn{
+    padding: 10px;
+    width: 100%;
+}
+

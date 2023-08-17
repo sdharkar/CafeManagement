@@ -2,37 +2,73 @@
     <h2>Order</h2>
 
 <ng-container *ngIf="true">
-    <div class="container" style="border-radius: 10px;">
-        <div class="card-table">
-            <div class="order-menu">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Menu Item</th>
-                            <th>Price</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Pizza</th>
-                            <th>250</th>
-                            <th><button class="btn btn-outline-danger cafe_btn">Delete</button></th>
-                        </tr>
-                        <tr>
-                            <th>Pizza</th>
-                            <th>250</th>
-                            <th><button class="btn btn-outline-danger cafe_btn">Delete</button></th>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>Total Amount:</th>
-                            <th>500</th>
-                            <th><button class="btn btn-outline-success cafe_btn" routerLink="/payment" >CheckOut</button></th>
-                        </tr>
-                    </tfoot>
-                </table>
+    <div class="container">
+        <div class="flex-container">
+            <div class="flex-item-left">
+                <div class="card">
+                    <table class="table table-light table-striped-columns">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Menu item</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>pizza</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>pizza</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>pizza</td>
+                                <td>200</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row">#</th>
+                                <td>Total Amount</td>
+                                <td>600</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="flex-item-right">
+                <div class="card">
+                    <table class="table table-light table-striped-columns">
+                        <thead>
+                            <tr>
+                                <th scope="col"><h3><b>Total</b></h3></th>
+                                <th scope="col"><h3>Rs.600/-</h3></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row"><h6>GST</h6></td>
+                                <td><h6>18%</h6></td>
+                            </tr>
+                            <tr>
+                                <td scope="row"><h6>Discount</h6></td>
+                                <td><h6>-18%</h6></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">
+                                    <button class="btn btn-outline-primary pay_btn">Pay Now</button>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
