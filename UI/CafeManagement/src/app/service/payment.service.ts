@@ -16,7 +16,7 @@ function _window() : any{
 
 export class PaymentService {
 
-  private baseUrl4 = 'http://localhost:9613/api/payment';
+  private baseUrl4 = 'http://localhost:9613/cafe/payment';
 
   constructor(private http: HttpClient) { }
 

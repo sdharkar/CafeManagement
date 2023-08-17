@@ -1,5 +1,0 @@
-  spring:
-    data:
-      mongodb:
-        uri: mongodb+srv://projectCMS:yhICULu97aAusYeG@cluster0.nta43ld.mongodb.net/?retryWrites=true&w=majority
-        database: manuItem

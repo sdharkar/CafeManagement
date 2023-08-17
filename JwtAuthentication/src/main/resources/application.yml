@@ -1,6 +1,0 @@
-spring:
-  data:
-    mongodb:
-      uri: mongodb+srv://role:Ylig6PfTwhewVxMd@cluster0.gtufy53.mongodb.net/?retryWrites=true&w=majority
-      database: role,user
-      

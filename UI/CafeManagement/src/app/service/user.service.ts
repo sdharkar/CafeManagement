@@ -9,9 +9,9 @@ import { UserAuthService } from './user-auth.service';
 })
 export class UserService {
   //URL for jwt authentication 
-  private baseUrl6 = 'http://localhost:9617/api/jwt/auth';
+  private baseUrl6 = 'http://localhost:9617/cafe/jwt/auth';
 
-  private baseUrl7 = 'http://localhost:9617/api/jwt/user'
+  private baseUrl7 = 'http://localhost:9617/cafe/jwt/user'
 
   //To authenticate end points
   requestHeader = new HttpHeaders(

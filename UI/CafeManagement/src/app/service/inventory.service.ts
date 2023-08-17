@@ -8,7 +8,7 @@ import { InventoryItem } from 'src/model/inventory-item.model';
 })
 export class InventoryService {
 
-  private baseUrl2 = 'http://localhost:9612/api/inventory/item';
+  private baseUrl2 = 'http://localhost:9612/cafe/inventory/item';
 
   constructor(private http: HttpClient) { }
 
