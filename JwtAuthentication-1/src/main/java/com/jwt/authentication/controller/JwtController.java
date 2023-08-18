@@ -13,7 +13,6 @@ import com.jwt.authentication.service.JwtService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/cafe/jwt/auth")
 public class JwtController {
 	
 	 	@Autowired

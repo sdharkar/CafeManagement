@@ -30,7 +30,7 @@ public class UserService {
 		Set<Role> roles = new HashSet<>();
 		roles.add(role);
 		user.setRole(roles);
-		user.setPassword(getEncodedPassword(user.getPassword()));
+		user.setUserPassword(getEncodedPassword(user.getUserPassword()));
 		return userRepository.save(user);
 	}
 	
@@ -51,7 +51,7 @@ public class UserService {
 		adminUser.setFirstName("admin");
 		adminUser.setLastName("admin");
 		adminUser.setUserName("admin123");
-		adminUser.setPassword(getEncodedPassword("admin@pass"));
+		adminUser.setUserPassword(getEncodedPassword("admin@pass"));
 		Set<Role> adminRoles = new HashSet<>();
 		adminRoles.add(adminRole);
 		adminUser.setRole(adminRoles);

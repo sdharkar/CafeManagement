@@ -13,7 +13,7 @@ public class User {
 	private String userName;
 	private String firstName;
 	private String lastName;
-	private String password;
+	private String userPassword;
 
 	@DBRef
 	private Set<Role> role;
@@ -22,12 +22,12 @@ public class User {
 		super();
 	}
 
-	public User(String userName, String firstName, String lastName, String password, Set<Role> role) {
+	public User(String userName, String firstName, String lastName, String userPassword, Set<Role> role) {
 		super();
 		this.userName = userName;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.password = password;
+		this.userPassword = userPassword;
 		this.role = role;
 	}
 
@@ -55,12 +55,12 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getUserPassword() {
+		return userPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
 	public Set<Role> getRole() {
@@ -70,6 +70,8 @@ public class User {
 	public void setRole(Set<Role> role) {
 		this.role = role;
 	}
+
+	
 	
 	
 }

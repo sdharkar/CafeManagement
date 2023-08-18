@@ -12,7 +12,6 @@ import com.jwt.authentication.service.RoleService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/cafe/jwt/role")
 public class RoleController {
 	
 	@Autowired

@@ -15,7 +15,6 @@ import com.jwt.authentication.service.UserService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/cafe/jwt/user")
 public class UserController {
 	
 	@Autowired
