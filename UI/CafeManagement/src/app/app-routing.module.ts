@@ -16,6 +16,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { DashboardPaymentComponent } from './dashboard/dashboard-payment/dashboard-payment.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { AuthGuard } from './auth/auth.guard';
+import { NormalGuard } from './auth/normal.guard';
 
 
 const routes: Routes = [
@@ -23,8 +24,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'menu', component: MenuComponent},
   {path: 'order', component: OrderComponent},
- // {path: 'profile', component: UserProfileComponent, canActivate:[AuthGuard], data:{roles:['User']}},
-  //{path: 'dashboard', component: AdminDashboardComponent, canActivate:[AuthGuard], data:{roles:['Admin']} },
+ // {path: 'profile', component: UserProfileComponent,canActivate:[NormalGuard] },
+  //{path: 'dashboard', component: AdminDashboardComponent, canActivate:[AuthGuard] },
   {path: 'profile', component: UserProfileComponent},
   {path: 'dashboard', component: AdminDashboardComponent},
   {path: 'inventory', component: InventoryComponent},

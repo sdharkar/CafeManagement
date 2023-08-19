@@ -6,16 +6,16 @@
     <div class="col-xl-6 offset-3">
         <div class="card-body p-md-5 text-black shadow-lg">
         <h1 class="mb-5">Login</h1>
-        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <form #loginForm="ngForm" (ngSubmit)="formSubmit()">
         <div class="row">
         
         <div class="form-outline mb-4">
-            <input type="username" id="form3Example97" class="form-control form-control-lg" required [(ngModel)]="user.username" name="username" placeholder="Enter your username"/>
+            <input type="username" id="form3Example97" class="form-control form-control-lg" required [(ngModel)]="loginData.username" name="username" placeholder="Enter your username"/>
             <label class="form-label" for="form3Example97">Username</label>
         </div>
             
             <div class="form-outline">
-                <input type="password" id="form3Example1n" class="form-control form-control-lg" required [(ngModel)]="user.password" name="password" placeholder="Enter your password"/>
+                <input type="password" id="form3Example1n" class="form-control form-control-lg" required [(ngModel)]="loginData.password" name="password" placeholder="Enter your password"/>
                 <label class="form-label" for="form3Example1n">Password</label>
             </div>
         </div>

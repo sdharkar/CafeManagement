@@ -17,11 +17,11 @@
                 <a class="nav-link" routerLink="/order">Order</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" routerLink="/profile" *ngIf="userService.roleMatch(['Admin'])">Profile</a>
+                <a class="nav-link" routerLink="/profile" *ngIf="loginService.getUserRole()=='admin'">Profile</a>
                 <a class="nav-link" routerLink="/profile">Profile</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" routerLink="/dashboard" *ngIf="userService.roleMatch(['User'])">Dashboard</a>
+                <a class="nav-link" routerLink="/dashboard" *ngIf="loginService.getUserRole()=='user'">Dashboard</a>
                 <a class="nav-link" routerLink="/dashboard">Dashboard</a>
                 </li>
             </ul>
