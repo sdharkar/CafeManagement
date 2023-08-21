@@ -13,9 +13,6 @@ import { LoginService } from '../service/login.service';
 })
 export class LoginComponent implements OnInit{
 
-  // users : User[] = [];
-  // user : User = new User();
-
   loginData={
     username:'',
     password:''
@@ -55,9 +52,9 @@ export class LoginComponent implements OnInit{
 
             if(this.login.getUserRole()=="Admin"){
 
-              window.location.href='/admin-dashboard'
+              window.location.href='/dashboard'
             }else if(this.login.getUserRole()=="Customer"){
-              window.location.href='/user-dashboard'
+              window.location.href='/profile'
             }else{
               this.login.logout
             }
@@ -73,30 +70,5 @@ export class LoginComponent implements OnInit{
     )
   }
 
-  // onSubmit(){
-  //   console.log('Login successfully!!');
-  // }
-
-
-  // login(loginForm:NgForm){
-  //   this.userService.login(loginForm.value).subscribe( (response:any) =>{
-  //     console.log(response.jwtToken);
-  //     console.log(response.user.role);
-
-  //     this.userAuthService.setRoles(response.user.role);
-  //     this.userAuthService.setToken(response.jwtToken);
-  //     //console.log(response);
-  //     const role = response.user.role[0].roleName;
-  //     if(role === 'Admin'){
-  //       this.router.navigate(['/dashboard']);
-  //     } else {
-  //       this.router.navigate(['/menu'])
-  //     }
-  //   },
-  //   (error) => {
-  //     console.error("Error in login", error);
-  //   }
-  //   );
-  // }
 
 }

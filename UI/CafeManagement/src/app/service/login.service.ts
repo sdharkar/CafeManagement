@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  private baseUrl="http://localhost:9000/customer";
+  private baseUrl='http://localhost:9000/customer';
 
   
   static login(inputData: { username: string; password: string; }) {
@@ -21,8 +21,8 @@ export class LoginService {
   //generate Token
 
   public generateToken(loginData:any){
-return this.http.post(`${this.baseUrl}/authenticate`,loginData)
-  }
+    return this.http.post(`${this.baseUrl}/authenticate`,loginData)
+      }
 
   //login user: set token in local storage
   public loginUser(token: string){

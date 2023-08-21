@@ -31,6 +31,11 @@ export class UserService {
     public addCustomer(user:any){
       return this.http.post(`${this.baseUrl6}/addCustomer`,user)
         }
+
+
+        // public clear(){
+        //   localStorage.clear();
+        // }
   // //Signup
   // registerNewUser(user: User): Observable<User>{
   //   return this.http.post<User>(this.baseUrl7,user);

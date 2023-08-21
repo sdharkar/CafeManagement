@@ -24,10 +24,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 		private ApiInfo apiInfo() {
 
-			return new ApiInfo("Deals & Coupons",
+			return new ApiInfo("Cafe Management",
 	                "<h1>API reference example for Customer Microservice</h1>", "1.0.0", "Public API",
-	                new springfox.documentation.service.Contact("Shrirang Dharkar", "https://github.com/sdharkar", "dharkar_shrirang.cs@ghrce.raisoni.net"),
-	                "API License Open", "http://codeshark.com/");
+	                new springfox.documentation.service.Contact(" ", " ", " "),
+	                "API License Open", " ");
 		}
        
 }

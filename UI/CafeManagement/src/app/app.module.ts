@@ -35,6 +35,10 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard} from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { NormalGuard } from './auth/normal.guard';
+import { LoginService } from './service/login.service';
+import { authInterceptorProviders } from './service/auth.interceptor';
+
 
 
 @NgModule({
@@ -81,7 +85,10 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
       provide: HTTP_INTERCEPTORS,
       useClass:AuthInterceptor,
       multi:true
-    }
+    },
+    NormalGuard,
+    LoginService,
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
