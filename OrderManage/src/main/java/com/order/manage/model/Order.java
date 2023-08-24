@@ -75,6 +75,15 @@ public class Order {
 		this.status = status;
 	}
 
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", userName=" + userName + ", Menu=" + Menu + ", totalAmount=" + totalAmount
+				+ ", status=" + status + ", getId()=" + getId() + ", getUserName()=" + getUserName() + ", getMenu()="
+				+ getMenu() + ", getTotalAmount()=" + getTotalAmount() + ", getStatus()=" + getStatus()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+
 	
 
 	

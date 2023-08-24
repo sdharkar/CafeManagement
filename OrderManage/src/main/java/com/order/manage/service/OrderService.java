@@ -1,43 +1,53 @@
 package com.order.manage.service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.order.manage.model.Order;
+import com.order.manage.repository.MenuRepository;
 import com.order.manage.repository.OrderRepository;
+import com.order.manage.repository.UserRepository;
 
 
-
+@Service
 public class OrderService {
 
 	@Autowired
 	private OrderRepository orderRepository;
 	
-	public Order placeOrder(Order order) {
-        return orderRepository.save(order);
-    }
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
+	private MenuRepository menuRepository;
 	
 
-    public Optional<Order> getOrderById(String id) {
-        return orderRepository.findById(id);
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
     }
 
-    public List<Order> getOrdersByUserId(String userName) {
-        return orderRepository.findByUserId(userName);
+	public Optional<Order> getOrderById(String orderId) {
+        return orderRepository.findById(orderId);
     }
 
-    public Order updateOrderStatus(String id, String status) {
-        Order order = orderRepository.findById(id).orElse(null);
-        if (order != null) {
-            order.setStatus(status);
-            return orderRepository.save(order);
-        }
-        return null;
+    public List<Order> getOrdersByUserName(String userName) {
+        return orderRepository.findByUserName_UserName(userName);
     }
 
-    public void cancelOrder(String id) {
-        orderRepository.deleteById(id);
+    public Order createOrder(Order order) {
+        return orderRepository.save(order);
     }
+
+    public Order updateOrder(Order order) {
+        return orderRepository.save(order);
+    }
+
+    public void deleteOrder(String orderId) {
+        orderRepository.deleteById(orderId);
+    }
+
 }

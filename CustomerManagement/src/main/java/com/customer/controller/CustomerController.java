@@ -31,7 +31,7 @@ import com.customer.utilities.GlobalResources;
 @RequestMapping("/customer")
 @CrossOrigin("*")
 public class CustomerController {
-	
+
 	private Logger logger = GlobalResources.getLogger(CustomerController.class);
 
 	@Autowired
@@ -49,10 +49,9 @@ public class CustomerController {
 	@Autowired
 	private CustomerServiceImpl customerService;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/addCustomer")
-	public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer)
-	{
+	public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
 		try {
 			String methodName = "(addCustomer)";
 			logger.info(methodName + "Called");
@@ -64,44 +63,55 @@ public class CustomerController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 	}
-	
-	 @GetMapping("/get-customer/{username}")
-	    public ResponseEntity<Customer> getCustomerByUsername(@PathVariable("username") String username) {
-	        try {
-	        	String methodName = "getCustomerByUsername()";
-	    		logger.info(methodName + "Called");
-	            Customer customer = customerService.findByUsername(username);
-	            return new ResponseEntity<Customer>(customer,HttpStatus.OK);
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-	        }
-	    }
 
+	@GetMapping("/get-customer/{username}")
+	public ResponseEntity<Customer> getCustomerByUsername(@PathVariable("username") String username) {
+		try {
+			System.out.println("User by id got successfully");
+			String methodName = "getCustomerByUsername()";
+			logger.info(methodName + "Called");
+			Customer customer = customerService.findByUsername(username);
+			return new ResponseEntity<Customer>(customer, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
 
 	@GetMapping("/get-all-customer")
 	public ResponseEntity<List<Customer>> getAllCustomer() {
+		try {
+			System.out.println("All users got successfully");
 		return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
+		} catch (Exception e) {
+			System.out.println("Failed to get all the user");
+		}
+		return null;
 	}
 
 	@PostMapping("/authenticate") // Authenticate a Customer (Existing)
 	public ResponseEntity<?> generateToken(@RequestBody AuthenticationRequest authRequest) throws Exception {
 		try {
+			System.out.println("Token is generated for authentication");
 			authenticationManager.authenticate(
-					new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword())
-			);
-		}catch (BadCredentialsException e) {
-			throw new Exception("Invalid Username or Password!",e);
+					new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
+		} catch (BadCredentialsException e) {
+			throw new Exception("Invalid Username or Password!", e);
 		}
 		UserDetails userDetails = userDetailsService.loadUserByUsername(authRequest.getUsername());
 		String token = jwtUtil.generateToken(userDetails);
 		return ResponseEntity.ok(new AuthenticationResponse(token));
 	}
 
-
 	@GetMapping("/current-user")
-	public Object getCurrentUser(Authentication authentication){
+	public Object getCurrentUser(Authentication authentication) {
+		try{
+			System.out.println("Current user got successfully");
 		return authentication.getPrincipal();
+		} catch(Exception e){
+			System.out.println("Failed to get current user");
+		}
+		return authentication;
 	}
 
 }
