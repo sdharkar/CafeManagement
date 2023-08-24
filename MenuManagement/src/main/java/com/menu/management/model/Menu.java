@@ -3,9 +3,9 @@ package com.menu.management.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="menuItem")
+@Document(collection = "menuItem")
 public class Menu {
-	
+
 	@Id
 	private String id;
 	private String name;
@@ -13,11 +13,11 @@ public class Menu {
 	private double price;
 	private String category;
 	private Boolean available;
-	
+
 	public Menu() {
-		
+
 	}
-	
+
 	public Menu(String id, String name, String description, double price, String category, Boolean available) {
 		super();
 		this.id = id;
@@ -75,5 +75,5 @@ public class Menu {
 	public void setAvailable(Boolean available) {
 		this.available = available;
 	}
-	
+
 }

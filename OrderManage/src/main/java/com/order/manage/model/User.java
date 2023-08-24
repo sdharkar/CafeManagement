@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
 public class User {
-	
+
 	@Id
 	private String userName;
 
@@ -50,10 +50,5 @@ public class User {
 		User other = (User) obj;
 		return Objects.equals(userName, other.userName);
 	}
-	
-	
-	
-	
-	
-	
+
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.order.manage.model.User;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, String>{
+public interface UserRepository extends MongoRepository<User, String> {
 
 }

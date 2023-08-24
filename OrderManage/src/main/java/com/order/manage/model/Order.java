@@ -7,21 +7,21 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="orders")
+@Document(collection = "orders")
 public class Order {
-	
+
 	@Id
 	private String id;
-	
+
 	@DBRef
 	private Set<User> userName;
-	
+
 	@DBRef
 	private List<String> Menu;
-	
+
 	private double totalAmount;
 	private String status;
-	
+
 	public Order() {
 		super();
 	}
@@ -83,12 +83,5 @@ public class Order {
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
-
-	
-
-	
-	
-	
-	
 
 }
