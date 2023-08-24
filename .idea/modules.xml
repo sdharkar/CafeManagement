@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.org.eclipse.egit.core.cmp.iml" filepath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.org.eclipse.egit.core.cmp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ApiGateway/ApiGateway.iml" filepath="$PROJECT_DIR$/ApiGateway/ApiGateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CustomerManagement/CustomerManagement.iml" filepath="$PROJECT_DIR$/CustomerManagement/CustomerManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DiscoveryServer/DiscoveryServer.iml" filepath="$PROJECT_DIR$/DiscoveryServer/DiscoveryServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InventoryManage/InventoryManage.iml" filepath="$PROJECT_DIR$/InventoryManage/InventoryManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JwtAuthentication-1/JwtAuthentication-1.iml" filepath="$PROJECT_DIR$/JwtAuthentication-1/JwtAuthentication-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MenuManagement/MenuManagement.iml" filepath="$PROJECT_DIR$/MenuManagement/MenuManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OrderManage/OrderManage.iml" filepath="$PROJECT_DIR$/OrderManage/OrderManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PaymentManage/PaymentManage.iml" filepath="$PROJECT_DIR$/PaymentManage/PaymentManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserManagement/bin/UserManagement.iml" filepath="$PROJECT_DIR$/UserManagement/bin/UserManagement.iml" />
+    </modules>
+  </component>
+</project>

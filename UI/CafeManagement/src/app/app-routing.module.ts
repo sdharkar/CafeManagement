@@ -17,6 +17,7 @@ import { DashboardPaymentComponent } from './dashboard/dashboard-payment/dashboa
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { AuthGuard } from './auth/auth.guard';
 import { NormalGuard } from './auth/normal.guard';
+import { SearchMenuNameComponent } from './search-menu-name/search-menu-name.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path:'payment', component: PaymentComponent, canActivate:[NormalGuard]},
   {path:'dashboard-payment', component: DashboardPaymentComponent, canActivate:[AuthGuard]},
-  {path:'forbidden', component: ForbiddenComponent}
+  {path:'forbidden', component: ForbiddenComponent},
+  {path:'search', component: SearchMenuNameComponent}
 ];
 
 @NgModule({

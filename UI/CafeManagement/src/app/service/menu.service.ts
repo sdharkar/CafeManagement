@@ -25,9 +25,14 @@ export class MenuService {
     return this.http.get<MenuItem[]>(this.baseUrl1);
   }
 
+  //get by name
+  getMenuItemByName(name: string): Observable<MenuItem>{
+    return this.http.get<MenuItem>(`${this.baseUrl1}/search/${name}`);
+  }
+
   //Get menu by id
   getMenuItemById(id: string): Observable<MenuItem>{
-    return this.http.get<MenuItem>(`${this.baseUrl1}/${id}`)
+    return this.http.get<MenuItem>(`${this.baseUrl1}/${id}`);
   }
 
   //Update menuItem

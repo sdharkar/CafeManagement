@@ -1,36 +1,79 @@
 <!-- menu.component.html -->
 <div class="container">
-<h2 class="mb-4">Cafe Menu</h2>
+    <h2 class="mb-4">Cafe Menu</h2>
 
     <!-- Search Box -->
     <div class="container-fluid">
         <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <!-- <input class="form-control me-2" type="search" placeholder="Search menu" aria-label="Search" [(ngModel)]="name"> -->
+            <button class="btn btn-outline-success" type="submit" routerLink="/search">Search</button>
         </form>
     </div>
 
-<!--Cards of menu-->
-<div class="container">
-    <div class="row">
-        <ng-container class="list" *ngFor="let item of menuItems">
-            <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Card image cap">
-                <div class="card-body">
-                    <h3>{{ item.name }}</h3>
-                    <p>{{ item.description }}</p>
-                    <p>{{ item.price }}/-</p>
-                    <!--
-                    <a *ngIf="!login.isLoggenIn()" type="buttton" class="btn btn-secondary" routerLink="/jwtlogin">Login</a>
-                    <a *ngIf="login.isLoggenIn()" type="buttton" class="btn btn-primary" (click)="pay(coupon.code,coupon.category,coupon.provider,coupon.description)">GRAB DEAL</a>
+    <!-- search bar
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-9 col-sm-12 mt-5">
+                <input type="text" placeholder="Enter item name" class="form-control" name="search" [(ngModel)]="name">
+            </div>
+            <div class="col-lg-3 col-sm-12 mt-5">
+                <button type="button" class="btn btn-info" (click)="searchName()"
+                    (click)="toggleShowSearchResultByName()">Search</button>
+            </div>
+        </div>
+        <br><br> -->
+
+        <div class="container-fluid">
+            <div class="row">
+                <ng-container class="list" *ngFor="let item of menuItems">
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top"
+                            src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h3>{{ item.name }}</h3>
+                            <p>{{ item.description }}</p>
+                            <p>{{ item.price }}/-</p>
+                            <!--
+                        <a *ngIf="!login.isLoggedIn()" type="button" class="btn btn-secondary" routerLink="/login">Login</a>
+                        <a *ngIf="login.isLoggedIn()" type="button" class="btn btn-primary" (click)="pay(coupon.code,coupon.category,coupon.provider,coupon.description)">GRAB DEAL</a>
+                        -->
+                            <div class="card-group" style="width:auto;">
+                                <button class="btn btn-primary align-center cafe_btn mx-2">Order now</button>
+                                <button class="btn btn-secondary align-center cafe_btn" (click)="addToCart(item.id)">Add
+                                    to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <!--Cards of menu-->
+    <div class="container">
+        <div class="row">
+            <ng-container class="list" *ngFor="let item of menuItems">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top"
+                        src="https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h3>{{ item.name }}</h3>
+                        <p>{{ item.description }}</p>
+                        <p>{{ item.price }}/-</p>
+                        <!--
+                    <a *ngIf="!login.isLoggedIn()" type="button" class="btn btn-secondary" routerLink="/login">Login</a>
+                    <a *ngIf="login.isLoggedIn()" type="button" class="btn btn-primary" (click)="pay(coupon.code,coupon.category,coupon.provider,coupon.description)">GRAB DEAL</a>
                     -->
-                    <div class="card-group" style="width:auto;">
-                        <button class="btn btn-primary align-center cafe_btn mx-2">Order now</button>
-                        <button class="btn btn-secondary align-center cafe_btn" (click)="addToCart(item.id)">Add to cart</button>
+                        <div class="card-group" style="width:auto;">
+                            <button class="btn btn-primary align-center cafe_btn mx-2">Order now</button>
+                            <button class="btn btn-secondary align-center cafe_btn" (click)="addToCart(item.id)">Add to
+                                cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </ng-container>
+            </ng-container>
+        </div>
     </div>
-</div>
-

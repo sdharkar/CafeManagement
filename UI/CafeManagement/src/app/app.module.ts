@@ -38,6 +38,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { NormalGuard } from './auth/normal.guard';
 import { LoginService } from './service/login.service';
 import { authInterceptorProviders } from './service/auth.interceptor';
+import { SearchMenuNameComponent } from './search-menu-name/search-menu-name.component';
 
 
 
@@ -64,7 +65,8 @@ import { authInterceptorProviders } from './service/auth.interceptor';
     SignupComponent,
     CartComponent,
     PaymentComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    SearchMenuNameComponent
   ],
   imports: [
     BrowserModule,
