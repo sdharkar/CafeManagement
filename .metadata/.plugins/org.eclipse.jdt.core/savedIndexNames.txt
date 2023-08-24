@@ -82,7 +82,6 @@ INDEX VERSION 1.131+C:\Users\SHRIRANG\Documents\NewProject\.metadata\.plugins\or
 568070265.index
 91669018.index
 3728983846.index
-2244466884.index
 3469997655.index
 4236464099.index
 700878589.index

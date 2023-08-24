@@ -5706,3 +5706,111 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jface 2 0 2023-08-24 15:55:38.855
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-24 15:55:38.855
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.togglelinecommentcommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@231613cd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2ce3c507,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 15:56:52.338
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 15:56:52.348
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 15:56:52.353
+!MESSAGE buffering callback sts4.classpath.QqHSEeBk OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 15:56:52.354
+!MESSAGE executing callback sts4.classpath.QqHSEeBk 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 15:56:52.464
+!MESSAGE executing callback sts4.classpath.QqHSEeBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:31.832
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:31.840
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:31.845
+!MESSAGE buffering callback sts4.classpath.QqHSEeBk OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:31.846
+!MESSAGE executing callback sts4.classpath.QqHSEeBk 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:31.877
+!MESSAGE executing callback sts4.classpath.QqHSEeBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:32.368
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:32.376
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:32.380
+!MESSAGE buffering callback sts4.classpath.QqHSEeBk OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:32.381
+!MESSAGE executing callback sts4.classpath.QqHSEeBk 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:00:32.533
+!MESSAGE executing callback sts4.classpath.QqHSEeBk SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-24 16:03:34.719
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:09:16.398
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:09:16.408
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:09:16.414
+!MESSAGE buffering callback sts4.classpath.QqHSEeBk OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:09:16.415
+!MESSAGE executing callback sts4.classpath.QqHSEeBk 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:09:16.536
+!MESSAGE executing callback sts4.classpath.QqHSEeBk SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:52:42.211
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:52:42.238
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:52:42.248
+!MESSAGE buffering callback sts4.classpath.QqHSEeBk OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:52:42.251
+!MESSAGE executing callback sts4.classpath.QqHSEeBk 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-24 16:52:42.453
+!MESSAGE executing callback sts4.classpath.QqHSEeBk SUCCESS [done]

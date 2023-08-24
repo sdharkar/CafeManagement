@@ -10,4 +10,6 @@ import com.order.manage.model.Order;
 @Repository
 public interface OrderRepository extends MongoRepository<Order, String> {
 
+	List<Order> findByUserName(String userName);
+
 }
