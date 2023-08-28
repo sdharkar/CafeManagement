@@ -37,7 +37,7 @@ const routes: Routes = [
   {path:'payment', component: PaymentComponent, canActivate:[NormalGuard]},
   {path:'dashboard-payment', component: DashboardPaymentComponent, canActivate:[AuthGuard]},
   {path:'forbidden', component: ForbiddenComponent},
-  {path:'search', component: SearchMenuNameComponent}
+  {path:'search/:name', component: SearchMenuNameComponent}
 ];
 
 @NgModule({

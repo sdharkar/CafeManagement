@@ -8,22 +8,23 @@ import { LoginService } from '../service/login.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
-  constructor(private userAuthService :UserAuthService,
-              private router :Router,
-              public loginService: LoginService
-              ){}
+  constructor(private userAuthService: UserAuthService,
+    private router: Router,
+    public loginService: LoginService
+  ) { }
 
   ngOnInit(): void {
-      
+
   }
 
-  public logout(){
-    this.loginService.clear();
+  public logout() {
+    this.loginService.logout();
+    window.location.reload();
     this.router.navigate(['/home']);
   }
 
-  
+
 
 }

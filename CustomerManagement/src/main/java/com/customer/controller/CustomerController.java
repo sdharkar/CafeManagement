@@ -104,14 +104,16 @@ public class CustomerController {
 	}
 
 	@GetMapping("/current-user")
-	public Object getCurrentUser(Authentication authentication) {
+	public Object getCurrentUser() {
 		try{
 			System.out.println("Current user got successfully");
-		return authentication.getPrincipal();
+		//return authentication.getPrincipal();
 		} catch(Exception e){
 			System.out.println("Failed to get current user");
 		}
-		return authentication;
+		//return authentication;
+		System.out.println("current user is running");
+		return null;
 	}
 
 }

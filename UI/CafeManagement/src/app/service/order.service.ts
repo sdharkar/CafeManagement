@@ -37,6 +37,4 @@ export class OrderService {
     return this.http.delete<void>(`${this.baseUrl3}/${id}`);
   }
 
- 
-
 }

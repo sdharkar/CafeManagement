@@ -20,11 +20,11 @@
                     <p>{{ item.price }}/-</p>
                     <!--
                     <a *ngIf="!login.isLoggedIn()" type="button" class="btn btn-secondary" routerLink="/login">Login</a>
-                    <a *ngIf="login.isLoggedIn()" type="button" class="btn btn-primary" (click)="pay(coupon.code,coupon.category,coupon.provider,coupon.description)">GRAB DEAL</a>
                     -->
                     <div class="card-group" style="width:auto;">
                         <button class="btn btn-primary align-center cafe_btn mx-2">Order now</button>
-                        <button class="btn btn-secondary align-center cafe_btn" (click)="addToCart(item.id)">Add to cart</button>
+                        <button class="btn btn-secondary align-center cafe_btn" (click)="addToCart(item.id)">Add to
+                            cart</button>
                     </div>
                 </div>
             </div>

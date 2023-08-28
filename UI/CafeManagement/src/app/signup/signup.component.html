@@ -1,63 +1,69 @@
 <!--signup-->
 <div class="container-fluid" style="padding: 80px;">
-    
+
     <div class="col-xl-6 offset-3">
         <div class="card-body p-md-5 text-black shadow-lg">
             <h1 class="mb-5">Signup</h1>
-        <form (ngSubmit)="formSubmit()">
-        <div class="row">
-            
-            <div class="col-md-6 mb-4">
-            <div class="form-outline">
-                <input type="text" id="form3Example1m" class="form-control form-control-lg" required [(ngModel)]="user.username" name="username"/>
-                <label class="form-label" for="form3Example1m">Username</label>
-            </div>
-            </div>
+            <form (ngSubmit)="formSubmit()">
+                <div class="row">
 
-            
-            <div class="col-md-6 mb-4">
-            <div class="form-outline">
-                <input type="password" id="form3Example1n" class="form-control form-control-lg" required [(ngModel)]="user.password" name="password"/>
-                <label class="form-label" for="form3Example1n">Password</label>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <input type="text" id="form3Example1m" class="form-control form-control-lg" required
+                                [(ngModel)]="user.username" name="username" />
+                            <label class="form-label" for="form3Example1m">Username</label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            <input type="password" id="form3Example1n" class="form-control form-control-lg" required
+                                [(ngModel)]="user.password" name="password" />
+                            <label class="form-label" for="form3Example1n">Password</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="form3Example8" class="form-control form-control-lg" [(ngModel)]="user.name"
+                        name="name" />
+                    <label class="form-label" for="form3Example8">Name</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="form3Example8" class="form-control form-control-lg"
+                        [(ngModel)]="user.address" name="address" />
+                    <label class="form-label" for="form3Example8">Address</label>
+                </div>
+
+
+                <div class="form-outline mb-4">
+                    <input type="email" id="form3Example97" class="form-control form-control-lg" required
+                        [(ngModel)]="user.email" name="email" />
+                    <label class="form-label" for="form3Example97">Email</label>
+                </div>
+
+
+                <div class="form-outline mb-4">
+                    <input type="number" id="form3Example97" class="form-control form-control-lg"
+                        [(ngModel)]="user.phone" name="phone" />
+                    <label class="form-label" for="form3Example97">Phone No</label>
+                </div>
+
+                <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-light btn-lg" (click)="reloadPage()">Reset all</button>
+                    <button type="submit" class="btn btn-warning btn-lg ms-2">Register</button>
+                </div>
+
+            </form>
+            <div class="text-center mt-3">
+                Already have an account <a routerLink="/login">Log-in</a>
             </div>
-            </div>
-        </div>
-        
-      
-        <div class="form-outline mb-4">
-            <input type="text" id="form3Example8" class="form-control form-control-lg" [(ngModel)]="user.name" name="name"/>
-            <label class="form-label" for="form3Example8">Name</label>
-        </div>
-       
-        <div class="form-outline mb-4">
-            <input type="text" id="form3Example8" class="form-control form-control-lg" [(ngModel)]="user.address" name="address"/>
-            <label class="form-label" for="form3Example8">Address</label>
-        </div>
-        
-     
-        <div class="form-outline mb-4">
-            <input type="email" id="form3Example97" class="form-control form-control-lg" required [(ngModel)]="user.email" name="email"/>
-            <label class="form-label" for="form3Example97">Email</label>
         </div>
 
-       
-        <div class="form-outline mb-4">
-            <input type="number" id="form3Example97" class="form-control form-control-lg" [(ngModel)]="user.phone" name="phone"/>
-            <label class="form-label" for="form3Example97">Phone No</label>
-        </div>
 
-        <div class="d-flex justify-content-end pt-3">
-            <button type="button" class="btn btn-light btn-lg" (click)="reloadPage()">Reset all</button>
-            <button type="submit" class="btn btn-warning btn-lg ms-2">Register</button>
-        </div>
-        
-        </form>
-        <div class="text-center mt-3">
-            Already have an account <a routerLink="/login">Log-in</a>
-        </div>
-        </div>
-        
+    </div>
 
-    </div>        
-    
 </div>
