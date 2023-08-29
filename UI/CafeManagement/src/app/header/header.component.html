@@ -1,91 +1,91 @@
 <!-- homepage.component.html -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">La Cucina</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">La Cucina</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                <a class="nav-link" routerLink="/">Home</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" routerLink="/menu">Menu</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" routerLink="/order" *ngIf="loginService.getUserRole()=='Customer'">Order</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" routerLink="/profile" *ngIf="loginService.getUserRole()=='Customer'">Profile</a>
-                <!-- <a class="nav-link" routerLink="/profile">Profile</a> -->
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" routerLink="/dashboard" *ngIf="loginService.getUserRole()=='Admin'">Dashboard</a>
-                <!-- <a class="nav-link" routerLink="/dashboard">Dashboard</a> -->
-                </li>
-            </ul>
-            <form class="d-flex">
-                <button *ngIf="!loginService.isLoggedIn()" class="btn btn-success" routerLink="/login">Login</button>
-                <button *ngIf="loginService.isLoggedIn()" type="buttton" class="btn btn-danger" (click)="logout()" routerLink="/home">logout</button>
-            </form>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/order" *ngIf="loginService.getUserRole()=='Customer'">Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/profile"
+                            *ngIf="loginService.getUserRole()=='Customer'">Profile</a>
+                        <!-- <a class="nav-link" routerLink="/profile">Profile</a> -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/dashboard"
+                            *ngIf="loginService.getUserRole()=='Admin'">Dashboard</a>
+                        <!-- <a class="nav-link" routerLink="/dashboard">Dashboard</a> -->
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button *ngIf="!loginService.isLoggedIn()" class="btn btn-success"
+                        routerLink="/login">Login</button>
+                    <button *ngIf="loginService.isLoggedIn()" type="buttton" class="btn btn-danger" (click)="logout()"
+                        routerLink="/home">logout</button>
+                </form>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
 
 
 
-
+<!-- 
 <header>
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
         <img class="logo" src="assets/images/ondeal11.png" alt="logo">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" routerLink="/home">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <!--<li class="nav-item">
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Profile
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="text-align:center;">
-                    <li><a class="btn" routerLink="/admin-dashboard">Admin</a></li>
-                    <li><a class="btn" routerLink="/user-dashboard">User</a></li>
-                    </ul>
-                </div>
-            </li>-->
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/coupons">Deals</a>
-            </li>
-            <li class="nav-item">
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Search
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="text-align:center;">
-                    <li><a class="btn" routerLink="/category">Category</a></li>
-                    <li><a class="btn" routerLink="/provider">Brand</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                
-                <a class="nav-link" routerLink="/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a *ngIf="!loginService.isLoggedIn()" class="nav-link active" aria-current="page" routerLink="/signup">Signup</a>
-            </li>
-        </ul>
-        <form>
-        <button *ngIf="!loginService.isLoggedIn()" class="btn btn-success" routerLink="/jwtlogin">Login</button>
-        <button *ngIf="loginService.isLoggedIn()" type="buttton" class="btn btn-danger" (click)="logout()" routerLink="/coupons">logout</button>
-        </form>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/home">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/coupons">Deals</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Search
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="text-align:center;">
+                            <li><a class="btn" routerLink="/category">Category</a></li>
+                            <li><a class="btn" routerLink="/provider">Brand</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" routerLink="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="!loginService.isLoggedIn()" class="nav-link active" aria-current="page"
+                        routerLink="/signup">Signup</a>
+                </li>
+            </ul>
+            <form>
+                <button *ngIf="!loginService.isLoggedIn()" class="btn btn-success" routerLink="/jwtlogin">Login</button>
+                <button *ngIf="loginService.isLoggedIn()" type="buttton" class="btn btn-danger" (click)="logout()"
+                    routerLink="/coupons">logout</button>
+            </form>
         </div>
     </nav>
-  </header>
-  
+</header> -->

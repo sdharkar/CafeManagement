@@ -13,27 +13,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>pizza</td>
-                        <td>200</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>pizza</td>
-                        <td>200</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>pizza</td>
-                        <td>200</td>
+                    <tr class="orderItem" *ngFor="let item of menuItems">
+                        <th>{{item.id}}</th>
+                        <th>{{item.name}}</th>
+                        <th>{{item.price}}</th>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
                         <th scope="row">#</th>
                         <td>Total Amount</td>
-                        <td>600</td>
+                        <td>{{totalAmount}}</td>
                     </tr>
                 </tfoot>
             </table>
@@ -42,18 +32,30 @@
             <table class="table table-light table-striped-columns">
                 <thead>
                     <tr>
-                        <th scope="col"><h3><b>Total</b></h3></th>
-                        <th scope="col"><h3>Rs.600/-</h3></th>
+                        <th scope="col">
+                            <h3><b>Total</b></h3>
+                        </th>
+                        <th scope="col">
+                            <h3>{{totalAmount}}</h3>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td scope="row"><h6>GST</h6></td>
-                        <td><h6>18%</h6></td>
+                        <td scope="row">
+                            <h6>GST</h6>
+                        </td>
+                        <td>
+                            <h6>18%</h6>
+                        </td>
                     </tr>
                     <tr>
-                        <td scope="row"><h6>Discount</h6></td>
-                        <td><h6>-18%</h6></td>
+                        <td scope="row">
+                            <h6>Discount</h6>
+                        </td>
+                        <td>
+                            <h6>-18%</h6>
+                        </td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -67,102 +69,3 @@
         </div>
     </div>
 </div>
-
-
-    <!-- <h2>Order</h2>
-   
-        <div class="container-fluid">
-            <div class="row d-flex">
-            <div class="col-sm-8">
-                <div class="card">
-                    <table class="table table-light table-striped-columns">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Menu item</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>pizza</td>
-                                <td>200</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>pizza</td>
-                                <td>200</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>pizza</td>
-                                <td>200</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th scope="row">#</th>
-                                <td>Total Amount</td>
-                                <td>600</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <table class="table table-light table-striped-columns">
-                        <thead>
-                            <tr>
-                                <th scope="col"><h3><b>Total</b></h3></th>
-                                <th scope="col"><h3>Rs.600/-</h3></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td scope="row"><h6>GST</h6></td>
-                                <td><h6>18%</h6></td>
-                            </tr>
-                            <tr>
-                                <td scope="row"><h6>Discount</h6></td>
-                                <td><h6>-18%</h6></td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2">
-                                    <button class="btn btn-outline-primary pay_btn">Pay Now</button>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-        </div>
-        </div>
-     -->
-
-
-
-     
-
-
-
-
-
-<!-- 
-<ng-container *ngIf="false">
-    <div class="container">
-        <div class="card">
-            <h5 class="card-title"> Orders in cart</h5>
-        </div>
-        <div class="center">
-            <img src="https://images.unsplash.com/photo-1509315703195-529879416a7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b3JkZXIlMjBmb29kfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="">
-            <h4>You have not ordered yet!!!</h4>
-            <h6>Order the food now...</h6>
-            <button class="btn btn-primary cafe_btn" routerLink="/menu">Order Now</button>
-        </div>
-    </div>
-</ng-container> -->
-

@@ -1,28 +1,14 @@
-export interface Order {
+import { MenuItem } from "./menu-item.model";
+import { User } from "./user.model";
+
+
+export interface Order extends Document {
     id: string;
-    userId: string;
-    items: OrderItem[];
+    userName: User[];
+    Menu: MenuItem[];
     totalAmount: number;
     status: string;
 }
 
-export interface OrderItem {
-    itemId: string;
-    quantity: number;
-}
-
-export class Order{
-    id!: string;
-    userId!: string;
-    items!: OrderItem[];
-    totalAmount!: number;
-    status!: string;
-}
-
-
-export class OrderItem {
-    itemId!: string;
-    quantity!: number;
-}
 
 

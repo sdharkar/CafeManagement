@@ -8,7 +8,7 @@
                 <div class="d-flex flex-column align-items-center text-center">
                 <img src="https://img.freepik.com/free-icon/profile_318-931771.jpg?t=st=1692352254~exp=1692352854~hmac=4dabbb3d305d877c21b68014c766b48d7a1d538fe2502404bf35fe0fc717ac54" alt="Admin" class="rounded-circle" width="150">
                 <div class="mt-3">
-                    <h4>ram123</h4>
+                    <h4>{{user.username}}</h4>
                 </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     <h6 class="mb-0">User Name</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    ram123
+                    {{user.username}}
                 </div>
                 </div>
                 <hr>
@@ -45,7 +45,7 @@
                     <h6 class="mb-0">Name</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    Ram Sharma
+                    {{user.name}}
                 </div>
                 </div>
                 <hr>
@@ -54,7 +54,7 @@
                     <h6 class="mb-0">Address</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                    Mumbai
+                    {{user.address}}
                 </div>
                 </div>
                 <hr>
@@ -63,7 +63,7 @@
                         <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        sample@text.com
+                        {{user.email}}
                     </div>
                     </div>
                     <hr>
@@ -72,7 +72,7 @@
                             <h6 class="mb-0">Phone No</h6>
                         </div>
                     <div class="col-sm-9 text-secondary">
-                            0000000000
+                            {{user.phone}}
                     </div>
                     </div>
                     <hr>

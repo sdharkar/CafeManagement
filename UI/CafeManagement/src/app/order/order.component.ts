@@ -12,7 +12,7 @@ import { MenuService } from '../service/menu.service';
 export class OrderComponent implements OnInit{
   menuItems: MenuItem[] = [];
   orders!: Order[];
-  order: Order = new Order();
+  totalAmount: number = 0;
 
   constructor(private orderService: OrderService, private menuService: MenuService){}
 

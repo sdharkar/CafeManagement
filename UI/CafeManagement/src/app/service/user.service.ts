@@ -11,31 +11,24 @@ export class UserService {
   //URL for jwt authentication 
   private baseUrl6 = 'http://localhost:9000/customer';
 
-  private baseUrl7 = 'http://localhost:9617/cafe/jwt/user';
-
-  
- 
-
-  // //To authenticate end points
-  // requestHeader = new HttpHeaders(
-  //   {
-  //     "No-Auth":"True"
-  //   }
-  // )
-
   constructor(private http: HttpClient,
-              private userAuthService :UserAuthService
-              ) { }
+    private userAuthService: UserAuthService
+  ) { }
 
 
-    public addCustomer(user:any){
-      return this.http.post(`${this.baseUrl6}/addCustomer`,user)
-        }
+  public addCustomer(user: any) {
+    return this.http.post(`${this.baseUrl6}/addCustomer`, user)
+  }
 
 
-        // public clear(){
-        //   localStorage.clear();
-        // }
+
+  public getCurrentUser(): Observable<User>{
+    return this.http.get<User>(`${this.baseUrl6}/current-user`);
+  }
+
+  // public clear(){
+  //   localStorage.clear();
+  // }
   // //Signup
   // registerNewUser(user: User): Observable<User>{
   //   return this.http.post<User>(this.baseUrl7,user);
@@ -58,7 +51,7 @@ export class UserService {
   // public roleMatch(allowedRoles: string[]): boolean {
   //   let isMatch = false;
   //   const userRoles: any = this.userAuthService.getRoles();
-  
+
   //   if (userRoles != null && userRoles.length > 0) {
   //     for (let i = 0; i < userRoles.length; i++) {
   //       for (let j = 0; j < allowedRoles.length; j++) {
@@ -71,10 +64,10 @@ export class UserService {
   //       }
   //     }
   //   }
-  
+
   //   return isMatch;
   //}
-  
+
 
 
 }
