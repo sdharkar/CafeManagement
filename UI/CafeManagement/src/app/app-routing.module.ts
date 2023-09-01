@@ -19,7 +19,6 @@ import { AuthGuard } from './auth/auth.guard';
 import { NormalGuard } from './auth/normal.guard';
 import { SearchMenuNameComponent } from './search-menu-name/search-menu-name.component';
 
-
 const routes: Routes = [
   // {path:'home', component: HomePageComponent},
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -38,27 +37,32 @@ const routes: Routes = [
   // {path:'dashboard-payment', component: DashboardPaymentComponent, canActivate:[AuthGuard]},
   // {path:'forbidden', component: ForbiddenComponent},
   // {path:'search/:name', component: SearchMenuNameComponent}
-  {path:'home', component: HomePageComponent},
+
+  { path: 'home', component: HomePageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {path: 'menu', component: MenuComponent},
-  {path: 'order', component: OrderComponent},
-  {path: 'profile', component: UserProfileComponent},
-  {path: 'dashboard', component: AdminDashboardComponent},
-  {path: 'inventory', component: InventoryComponent},
-  {path: 'update-inventory/:id', component: UpdateInventoryComponent},
-  {path: 'dashboard-menu', component: DashboardMenuComponent},
-  {path: 'dashboard-content', component: DashboardContentComponent},
-  {path: 'update-menu/:id', component: UpdateMenuComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent},
-  {path:'payment', component: PaymentComponent},
-  {path:'dashboard-payment', component: DashboardPaymentComponent},
-  {path:'forbidden', component: ForbiddenComponent},
-  {path:'search/:name', component: SearchMenuNameComponent}
+  { path: 'menu', component: MenuComponent },
+  // {path: 'order', component: OrderComponent},
+  // {path: 'profile', component: UserProfileComponent},
+  // {path: 'dashboard', component: AdminDashboardComponent},
+  { path: 'inventory', component: InventoryComponent },
+  { path: 'update-inventory/:id', component: UpdateInventoryComponent },
+  { path: 'dashboard-menu', component: DashboardMenuComponent },
+  { path: 'dashboard-content', component: DashboardContentComponent },
+  { path: 'update-menu/:id', component: UpdateMenuComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'payment', component: PaymentComponent },
+  { path: 'dashboard-payment', component: DashboardPaymentComponent },
+  { path: 'forbidden', component: ForbiddenComponent },
+  { path: 'search/:name', component: SearchMenuNameComponent },
+
+  { path: 'order', component: OrderComponent, canActivate: [NormalGuard] },
+  {path: 'profile', component: UserProfileComponent, canActivate: [NormalGuard]},
+  {path: 'dashboard',component: AdminDashboardComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

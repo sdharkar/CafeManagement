@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.org.eclipse.egit.core.cmp.iml" filepath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.org.eclipse.egit.core.cmp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ApiGateway/ApiGateway.iml" filepath="$PROJECT_DIR$/ApiGateway/ApiGateway.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CustomerManagement/CustomerManagement.iml" filepath="$PROJECT_DIR$/CustomerManagement/CustomerManagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/DiscoveryServer/DiscoveryServer.iml" filepath="$PROJECT_DIR$/DiscoveryServer/DiscoveryServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/InventoryManage/InventoryManage.iml" filepath="$PROJECT_DIR$/InventoryManage/InventoryManage.iml" />
       <module fileurl="file://$PROJECT_DIR$/JwtAuthentication-1/JwtAuthentication-1.iml" filepath="$PROJECT_DIR$/JwtAuthentication-1/JwtAuthentication-1.iml" />

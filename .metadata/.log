@@ -9513,3 +9513,2331 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-08-29 18:15:37.037
+!MESSAGE org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$13(LanguageServerWrapper.java:425)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$4(LanguageServerWrapper.java:260)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:161)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy11/jdk.proxy11.$Proxy48.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$13(LanguageServerWrapper.java:423)
+	... 7 more
+Caused by: java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+
+!ENTRY org.eclipse.ui 2 2 2023-08-29 18:15:39.666
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2023-08-30 13:29:53.347 -----------------------------------------------
+eclipse.buildId=4.13.1.202201311654
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2023-08-30 13:31:15.210
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-30 13:31:15.210
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@25c6a9de,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@142422a4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-30 13:31:15.210
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3c9cd930,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5dcbdcb9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2023-08-30 13:31:18.334
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2023-08-30 13:31:18.334
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:26.233
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:26.235
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@38467068[org.springframework.tooling.boot.ls:1.30.0.202201310805(id=564)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:26.251
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:26.373
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-08-30 13:31:29.317
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-08-30 13:31:29.321
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-08-30 13:31:29.376
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\SHRIRANG'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:40.349
+!MESSAGE Boot LS startup time from start to initialized: 14061ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.392
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.XlQojatCisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.396
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.401
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.403
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.403
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.404
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.XlQojatC => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.479
+!MESSAGE classpath=146 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.486
+!MESSAGE buffering callback sts4.classpath.XlQojatC CustomerManagement false 146
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.487
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.543
+!MESSAGE classpath=142 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.550
+!MESSAGE buffering callback sts4.classpath.XlQojatC ApiGateway false 142
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.552
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.570
+!MESSAGE classpath=131 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.578
+!MESSAGE buffering callback sts4.classpath.XlQojatC DiscoveryServer false 131
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.580
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.606
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.609
+!MESSAGE buffering callback sts4.classpath.XlQojatC InventoryManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.610
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.619
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.625
+!MESSAGE buffering callback sts4.classpath.XlQojatC JwtAuthentication-1 false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.627
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.632
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.637
+!MESSAGE buffering callback sts4.classpath.XlQojatC MenuManagement false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.638
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.644
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.648
+!MESSAGE buffering callback sts4.classpath.XlQojatC OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.650
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.657
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.662
+!MESSAGE buffering callback sts4.classpath.XlQojatC PaymentManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:41.663
+!MESSAGE executing callback sts4.classpath.XlQojatC 8 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 13:31:43.703
+!MESSAGE executing callback sts4.classpath.XlQojatC FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2023-08-30 13:31:43.740
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:37)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 2 2 2023-08-30 14:25:14.636
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:25:48.405
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:25:48.415
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:25:48.422
+!MESSAGE buffering callback sts4.classpath.XlQojatC CustomerManagement false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:25:48.424
+!MESSAGE executing callback sts4.classpath.XlQojatC 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:25:48.475
+!MESSAGE executing callback sts4.classpath.XlQojatC SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-30 14:53:48.119
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:57:03.917
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:57:03.978
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:57:03.998
+!MESSAGE buffering callback sts4.classpath.XlQojatC CustomerManagement false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:57:04.008
+!MESSAGE executing callback sts4.classpath.XlQojatC 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 14:57:04.262
+!MESSAGE executing callback sts4.classpath.XlQojatC SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 2 0 2023-08-30 15:53:48.924
+!MESSAGE Timeout waiting for data to generate LS hover
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:54:52.023
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.XlQojatC
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:54:52.038
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.XlQojatC
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:54:52.039
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:54:52.040
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.XlQojatC => OK
+!SESSION 2023-08-30 15:58:15.814 -----------------------------------------------
+eclipse.buildId=4.13.1.202201311654
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2023-08-30 15:58:37.335
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-30 15:58:37.335
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7781b55f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2cb3bc0e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-30 15:58:37.335
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@511f21f9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5f97d43e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2023-08-30 15:58:39.974
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2023-08-30 15:58:39.974
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:58:46.789
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:58:46.791
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@54760b52[org.springframework.tooling.boot.ls:1.30.0.202201310805(id=564)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:58:46.800
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:58:46.964
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-08-30 15:58:49.797
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-08-30 15:58:49.810
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-08-30 15:58:49.907
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\SHRIRANG'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:01.960
+!MESSAGE Boot LS startup time from start to initialized: 15133ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.391
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.OvkyDMyrisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.399
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.405
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.407
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.408
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.410
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.OvkyDMyr => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.489
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.499
+!MESSAGE buffering callback sts4.classpath.OvkyDMyr CustomerManagement false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.502
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.519
+!MESSAGE classpath=142 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.529
+!MESSAGE buffering callback sts4.classpath.OvkyDMyr ApiGateway false 142
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.538
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.559
+!MESSAGE classpath=131 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.570
+!MESSAGE buffering callback sts4.classpath.OvkyDMyr DiscoveryServer false 131
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.578
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.597
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.616
+!MESSAGE buffering callback sts4.classpath.OvkyDMyr InventoryManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.631
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.644
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.653
+!MESSAGE buffering callback sts4.classpath.OvkyDMyr JwtAuthentication-1 false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.659
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.668
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.675
+!MESSAGE buffering callback sts4.classpath.OvkyDMyr MenuManagement false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.677
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.685
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.692
+!MESSAGE buffering callback sts4.classpath.OvkyDMyr OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.694
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.709
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.718
+!MESSAGE buffering callback sts4.classpath.OvkyDMyr PaymentManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:02.725
+!MESSAGE executing callback sts4.classpath.OvkyDMyr 8 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:04.362
+!MESSAGE executing callback sts4.classpath.OvkyDMyr SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:29.133
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OvkyDMyr
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:29.134
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.OvkyDMyr
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:29.135
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 15:59:29.135
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OvkyDMyr => OK
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 21:12:55.889
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-75: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:12:55.889
+!MESSAGE Worker-75: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-75: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getCurrentSelection(SelectedResourceManager.java:91)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:236)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:12:55.889
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.ScriptShape(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3444)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3639)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledTextRenderer.calculate(StyledTextRenderer.java:298)
+	at org.eclipse.swt.custom.StyledText.redraw(StyledText.java:7846)
+	at org.eclipse.swt.custom.StyledText.updateCaretVisibility(StyledText.java:11278)
+	at org.eclipse.swt.custom.StyledText.handleResize(StyledText.java:6534)
+	at org.eclipse.swt.custom.StyledText.lambda$28(StyledText.java:5939)
+	at org.eclipse.swt.custom.StyledText$$Lambda$730/0x0000000100b57150.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1065)
+	at org.eclipse.swt.widgets.Control.WM_SIZE(Control.java:5455)
+	at org.eclipse.swt.widgets.Scrollable.WM_SIZE(Scrollable.java:360)
+	at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1725)
+	at org.eclipse.swt.widgets.Canvas.WM_SIZE(Canvas.java:444)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4830)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:91)
+	at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5685)
+	at org.eclipse.swt.widgets.Canvas.WM_WINDOWPOSCHANGED(Canvas.java:451)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4843)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.EndDeferWindowPos(Native Method)
+	at org.eclipse.swt.widgets.Composite.resizeChildren(Composite.java:993)
+	at org.eclipse.swt.widgets.Composite.resizeChildren(Composite.java:970)
+	at org.eclipse.swt.widgets.Composite.setResizeChildren(Composite.java:1166)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1336)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1341)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1320)
+	at org.eclipse.swt.widgets.Composite.setLayoutDeferred(Composite.java:1127)
+	at org.eclipse.swt.widgets.Display.runDeferredLayouts(Display.java:4084)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3625)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 21:13:06.333
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-75: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:13:06.333
+!MESSAGE Worker-75: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-75: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getSelectedResource(SelectedResourceManager.java:138)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:238)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:13:06.333
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.ScriptShape(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3444)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3639)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledText.computeSize(StyledText.java:1734)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computeSize(ScrollableControl.java:95)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computePreferredSize(ScrollableControl.java:91)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.PreferredSizeProvider.getSize(PreferredSizeProvider.java:35)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.SizeComputer.updatePreferredSize(SizeComputer.java:44)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.AdaptionContext.updatePreferredSize(AdaptionContext.java:106)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.doRun(WatchDog.java:101)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.lambda$0(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog$$Lambda$1019/0x0000000100c87d48.run(Unknown Source)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.Reconciliation.runWhileSuspended(Reconciliation.java:62)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.runWithReconciliationSuspended(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.run(WatchDog.java:91)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4158)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3262)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:18.779
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:18.793
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@54760b52[org.springframework.tooling.boot.ls:1.30.0.202201310805(id=564)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:18.795
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:26.100
+!MESSAGE Boot LS startup time from start to initialized: 7274ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:26.461
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.InLPyBczisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:26.465
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:26.468
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:26.472
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:26.474
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:26.476
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.InLPyBcz => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:27.270
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:27.288
+!MESSAGE buffering callback sts4.classpath.InLPyBcz CustomerManagement false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:27.294
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:27.972
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:28.130
+!MESSAGE buffering callback sts4.classpath.InLPyBcz MenuManagement false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:28.135
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.158
+!MESSAGE classpath=142 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.349
+!MESSAGE buffering callback sts4.classpath.InLPyBcz ApiGateway false 142
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.353
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.485
+!MESSAGE classpath=131 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.535
+!MESSAGE buffering callback sts4.classpath.InLPyBcz DiscoveryServer false 131
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.540
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.560
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.569
+!MESSAGE buffering callback sts4.classpath.InLPyBcz InventoryManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.572
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.620
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.641
+!MESSAGE buffering callback sts4.classpath.InLPyBcz JwtAuthentication-1 false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.642
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.654
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.658
+!MESSAGE buffering callback sts4.classpath.InLPyBcz OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.659
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.666
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.670
+!MESSAGE buffering callback sts4.classpath.InLPyBcz PaymentManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:29.671
+!MESSAGE executing callback sts4.classpath.InLPyBcz 8 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:48:31.714
+!MESSAGE executing callback sts4.classpath.InLPyBcz FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2023-08-30 21:48:31.718
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:37)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 2 2 2023-08-30 21:48:44.272
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:10.925
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:10.937
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:10.946
+!MESSAGE buffering callback sts4.classpath.InLPyBcz CustomerManagement false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:10.946
+!MESSAGE executing callback sts4.classpath.InLPyBcz 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:10.986
+!MESSAGE executing callback sts4.classpath.InLPyBcz SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-08-30 21:49:11.024
+!MESSAGE org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$13(LanguageServerWrapper.java:425)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$4(LanguageServerWrapper.java:260)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:161)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy11/jdk.proxy11.$Proxy48.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$13(LanguageServerWrapper.java:423)
+	... 7 more
+Caused by: java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-08-30 21:49:11.026
+!MESSAGE org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$13(LanguageServerWrapper.java:425)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$4(LanguageServerWrapper.java:260)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:161)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy11/jdk.proxy11.$Proxy48.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$13(LanguageServerWrapper.java:423)
+	... 7 more
+Caused by: java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:11.643
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:11.659
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:11.670
+!MESSAGE buffering callback sts4.classpath.InLPyBcz CustomerManagement false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:11.672
+!MESSAGE executing callback sts4.classpath.InLPyBcz 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 21:49:14.858
+!MESSAGE executing callback sts4.classpath.InLPyBcz SUCCESS [done]
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 21:49:33.156
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-86: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:49:33.156
+!MESSAGE Worker-86: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-86: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getCurrentSelection(SelectedResourceManager.java:91)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:236)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:49:33.156
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.wst.sse.ui.internal.StructuredTextViewer.modelRange2WidgetRange(StructuredTextViewer.java:839)
+	at org.eclipse.jface.text.source.OverviewRuler.doPaint(OverviewRuler.java:765)
+	at org.eclipse.jface.text.source.OverviewRuler.doubleBufferPaint(OverviewRuler.java:689)
+	at org.eclipse.jface.text.source.OverviewRuler.redraw(OverviewRuler.java:910)
+	at org.eclipse.jface.text.source.OverviewRuler.lambda$0(OverviewRuler.java:488)
+	at org.eclipse.jface.text.source.OverviewRuler$$Lambda$722/0x0000000100b3a658.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 21:49:43.641
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-86: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:49:43.641
+!MESSAGE Worker-86: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-86: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getSelectedResource(SelectedResourceManager.java:138)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:238)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:49:43.641
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.ScriptShape(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3444)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3639)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledText.computeSize(StyledText.java:1734)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computeSize(ScrollableControl.java:95)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computePreferredSize(ScrollableControl.java:91)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.PreferredSizeProvider.getSize(PreferredSizeProvider.java:35)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.SizeComputer.updatePreferredSize(SizeComputer.java:44)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.AdaptionContext.updatePreferredSize(AdaptionContext.java:106)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.doRun(WatchDog.java:101)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.lambda$0(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog$$Lambda$1019/0x0000000100c87d48.run(Unknown Source)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.Reconciliation.runWhileSuspended(Reconciliation.java:62)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.runWithReconciliationSuspended(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.run(WatchDog.java:91)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4158)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3262)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 21:49:43.642
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-82: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:49:43.642
+!MESSAGE Worker-82: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-82: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getCurrentSelection(SelectedResourceManager.java:91)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:236)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:49:43.642
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.ScriptShape(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3444)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3523)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledText.computeSize(StyledText.java:1734)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computeSize(ScrollableControl.java:95)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computePreferredSize(ScrollableControl.java:91)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.PreferredSizeProvider.getSize(PreferredSizeProvider.java:35)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.SizeComputer.updatePreferredSize(SizeComputer.java:44)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.AdaptionContext.updatePreferredSize(AdaptionContext.java:106)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.doRun(WatchDog.java:101)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.lambda$0(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog$$Lambda$1019/0x0000000100c87d48.run(Unknown Source)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.Reconciliation.runWhileSuspended(Reconciliation.java:62)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.runWithReconciliationSuspended(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.run(WatchDog.java:91)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4158)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3262)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 21:49:53.767
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-82: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:49:53.767
+!MESSAGE Worker-82: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-82: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getSelectedResource(SelectedResourceManager.java:138)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:238)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 21:49:53.768
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.ScriptShape(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3444)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3639)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledText.computeSize(StyledText.java:1734)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computeSize(ScrollableControl.java:95)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computePreferredSize(ScrollableControl.java:91)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.PreferredSizeProvider.getSize(PreferredSizeProvider.java:35)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.SizeComputer.updatePreferredSize(SizeComputer.java:44)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.AdaptionContext.updatePreferredSize(AdaptionContext.java:106)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.doRun(WatchDog.java:101)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.lambda$0(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog$$Lambda$1019/0x0000000100c87d48.run(Unknown Source)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.Reconciliation.runWhileSuspended(Reconciliation.java:62)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.runWithReconciliationSuspended(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.run(WatchDog.java:91)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4158)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3262)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 22:48:44.279
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-89: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:48:44.281
+!MESSAGE Worker-89: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-89: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getCurrentSelection(SelectedResourceManager.java:91)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:236)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:48:44.284
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at java.base@17.0.1/sun.nio.ch.Net.poll(Native Method)
+	at java.base@17.0.1/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:181)
+	at java.base@17.0.1/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:190)
+	at java.base@17.0.1/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base@17.0.1/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base@17.0.1/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base@17.0.1/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base@17.0.1/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)
+	at java.base@17.0.1/java.io.BufferedInputStream.read(BufferedInputStream.java:263)
+	at java.base@17.0.1/java.io.DataInputStream.readByte(DataInputStream.java:271)
+	at java.rmi@17.0.1/sun.rmi.transport.StreamRemoteCall.executeCall(StreamRemoteCall.java:241)
+	at java.rmi@17.0.1/sun.rmi.server.UnicastRef.invoke(UnicastRef.java:165)
+	at jdk.remoteref/jdk.jmx.remote.internal.rmi.PRef.invoke(Unknown Source)
+	at java.management.rmi@17.0.1/javax.management.remote.rmi.RMIConnectionImpl_Stub.invoke(RMIConnectionImpl_Stub.java:419)
+	at java.management.rmi@17.0.1/javax.management.remote.rmi.RMIConnector$RemoteMBeanServerConnection.invoke(RMIConnector.java:1021)
+	at org.springframework.ide.eclipse.boot.launch.util.SpringApplicationLifecycleClient.stop(SpringApplicationLifecycleClient.java:94)
+	at org.springframework.ide.eclipse.boot.launch.process.BootProcessFactory$1.terminateNicely(BootProcessFactory.java:127)
+	at org.springframework.ide.eclipse.boot.launch.process.BootProcessFactory$1.terminate(BootProcessFactory.java:77)
+	at org.eclipse.debug.core.Launch.terminate(Launch.java:285)
+	at org.springsource.ide.eclipse.commons.ui.launch.LaunchUtils.terminate(LaunchUtils.java:155)
+	at org.springsource.ide.eclipse.commons.ui.launch.LaunchUtils.terminate(LaunchUtils.java:178)
+	at org.springsource.ide.eclipse.commons.ui.launch.StopProcessPullDownToolbarDelegate.performOperation(StopProcessPullDownToolbarDelegate.java:22)
+	at org.springsource.ide.eclipse.commons.ui.launch.AbstractLaunchToolbarPulldown$SubMenuProvider$RelaunchAction.run(AbstractLaunchToolbarPulldown.java:214)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:414)
+	at org.eclipse.jface.action.ActionContributionItem$$Lambda$565/0x000000010074d790.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4060)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3632)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 22:48:54.555
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-89: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:48:54.555
+!MESSAGE Worker-89: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-89: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getSelectedResource(SelectedResourceManager.java:138)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:238)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:48:54.556
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.CloseEnhMetaFile(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.createMetafileWithChars(TextLayout.java:3497)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3551)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledTextRenderer.calculate(StyledTextRenderer.java:298)
+	at org.eclipse.swt.custom.StyledText.redraw(StyledText.java:7846)
+	at org.eclipse.swt.custom.StyledText.updateCaretVisibility(StyledText.java:11278)
+	at org.eclipse.swt.custom.StyledText.setCaretLocations(StyledText.java:9055)
+	at org.eclipse.swt.custom.StyledText.setCaretLocations(StyledText.java:8949)
+	at org.eclipse.swt.custom.StyledText.scrollVertical(StyledText.java:8463)
+	at org.eclipse.swt.custom.StyledText.setTopIndex(StyledText.java:11069)
+	at org.eclipse.ui.console.TextConsoleViewer.scrollToEndOfDocument(TextConsoleViewer.java:143)
+	at org.eclipse.ui.console.TextConsoleViewer$2.runInUIThread(TextConsoleViewer.java:133)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.ui.progress.UIJob$$Lambda$1024/0x0000000100d34ea0.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.msgFilterProc(Display.java:3369)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4101)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 22:48:54.556
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-81: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:48:54.556
+!MESSAGE Worker-81: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-81: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getCurrentSelection(SelectedResourceManager.java:91)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:236)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:48:54.556
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.ScriptStringOut(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.createMetafileWithChars(TextLayout.java:3491)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3551)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledTextRenderer.calculate(StyledTextRenderer.java:298)
+	at org.eclipse.swt.custom.StyledText.redraw(StyledText.java:7846)
+	at org.eclipse.swt.custom.StyledText.updateCaretVisibility(StyledText.java:11278)
+	at org.eclipse.swt.custom.StyledText.setCaretLocations(StyledText.java:9055)
+	at org.eclipse.swt.custom.StyledText.setCaretLocations(StyledText.java:8949)
+	at org.eclipse.swt.custom.StyledText.scrollVertical(StyledText.java:8463)
+	at org.eclipse.swt.custom.StyledText.setTopIndex(StyledText.java:11069)
+	at org.eclipse.ui.console.TextConsoleViewer.scrollToEndOfDocument(TextConsoleViewer.java:143)
+	at org.eclipse.ui.console.TextConsoleViewer$2.runInUIThread(TextConsoleViewer.java:133)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.ui.progress.UIJob$$Lambda$1024/0x0000000100d34ea0.run(Unknown Source)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.msgFilterProc(Display.java:3369)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:237)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4101)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3626)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 22:49:04.835
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-81: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:49:04.835
+!MESSAGE Worker-81: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-81: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getSelectedResource(SelectedResourceManager.java:138)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:238)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:49:04.835
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.ScriptShape(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3444)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3639)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledTextRenderer.calculate(StyledTextRenderer.java:298)
+	at org.eclipse.swt.custom.StyledText.redraw(StyledText.java:7846)
+	at org.eclipse.swt.custom.StyledText.updateCaretVisibility(StyledText.java:11278)
+	at org.eclipse.swt.custom.StyledText.handleResize(StyledText.java:6534)
+	at org.eclipse.swt.custom.StyledText.lambda$28(StyledText.java:5939)
+	at org.eclipse.swt.custom.StyledText$$Lambda$730/0x0000000100b57150.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1065)
+	at org.eclipse.swt.widgets.Control.WM_SIZE(Control.java:5455)
+	at org.eclipse.swt.widgets.Scrollable.WM_SIZE(Scrollable.java:360)
+	at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1725)
+	at org.eclipse.swt.widgets.Canvas.WM_SIZE(Canvas.java:444)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4830)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:91)
+	at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5685)
+	at org.eclipse.swt.widgets.Canvas.WM_WINDOWPOSCHANGED(Canvas.java:451)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4843)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.SetWindowPos(Native Method)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1061)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3226)
+	at org.eclipse.swt.widgets.Control.setSizeInPixels(Control.java:3767)
+	at org.eclipse.swt.widgets.Control.setSize(Control.java:3797)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.setSize(ScrollableControl.java:103)
+	at com.codeaffine.eclipse.swt.widget.scrollable.StyledTextLayouter.layout(StyledTextLayouter.java:32)
+	at com.codeaffine.eclipse.swt.widget.scrollable.ScrollableLayout.layout(ScrollableLayout.java:63)
+	at com.codeaffine.eclipse.swt.widget.scrollable.ScrollableLayout.lambda$0(ScrollableLayout.java:54)
+	at com.codeaffine.eclipse.swt.widget.scrollable.ScrollableLayout$$Lambda$925/0x000000010093b8a0.run(Unknown Source)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.Reconciliation.runWhileSuspended(Reconciliation.java:62)
+	at com.codeaffine.eclipse.swt.widget.scrollable.ScrollableLayout.layout(ScrollableLayout.java:54)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1335)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1320)
+	at org.eclipse.swt.widgets.Composite.layout(Composite.java:700)
+	at org.eclipse.swt.widgets.Composite.layout(Composite.java:652)
+	at org.eclipse.swt.widgets.Composite.layout(Composite.java:608)
+	at com.codeaffine.eclipse.swt.widget.scrollable.LayoutTrigger.pull(LayoutTrigger.java:24)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.doRun(WatchDog.java:104)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.lambda$0(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog$$Lambda$1019/0x0000000100c87d48.run(Unknown Source)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.Reconciliation.runWhileSuspended(Reconciliation.java:62)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.runWithReconciliationSuspended(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.run(WatchDog.java:91)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4158)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3262)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 22:49:06.567
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-89: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:49:06.567
+!MESSAGE Worker-89: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-89: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getCurrentSelection(SelectedResourceManager.java:91)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:236)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:49:06.567
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.ScriptShape(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3444)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3639)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledTextRenderer.calculate(StyledTextRenderer.java:298)
+	at org.eclipse.swt.custom.StyledText.redraw(StyledText.java:7846)
+	at org.eclipse.swt.custom.StyledText.updateCaretVisibility(StyledText.java:11278)
+	at org.eclipse.swt.custom.StyledText.handleResize(StyledText.java:6534)
+	at org.eclipse.swt.custom.StyledText.lambda$28(StyledText.java:5939)
+	at org.eclipse.swt.custom.StyledText$$Lambda$730/0x0000000100b57150.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1065)
+	at org.eclipse.swt.widgets.Control.WM_SIZE(Control.java:5455)
+	at org.eclipse.swt.widgets.Scrollable.WM_SIZE(Scrollable.java:360)
+	at org.eclipse.swt.widgets.Composite.WM_SIZE(Composite.java:1725)
+	at org.eclipse.swt.widgets.Canvas.WM_SIZE(Canvas.java:444)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4830)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Scrollable.callWindowProc(Scrollable.java:91)
+	at org.eclipse.swt.widgets.Control.WM_WINDOWPOSCHANGED(Control.java:5685)
+	at org.eclipse.swt.widgets.Canvas.WM_WINDOWPOSCHANGED(Canvas.java:451)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4843)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.SetWindowPos(Native Method)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3265)
+	at org.eclipse.swt.widgets.Composite.setBoundsInPixels(Composite.java:1061)
+	at org.eclipse.swt.widgets.Control.setBoundsInPixels(Control.java:3226)
+	at org.eclipse.swt.widgets.Control.setSizeInPixels(Control.java:3767)
+	at org.eclipse.swt.widgets.Control.setSize(Control.java:3797)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.setSize(ScrollableControl.java:103)
+	at com.codeaffine.eclipse.swt.widget.scrollable.StyledTextLayouter.layout(StyledTextLayouter.java:32)
+	at com.codeaffine.eclipse.swt.widget.scrollable.ScrollableLayout.layout(ScrollableLayout.java:63)
+	at com.codeaffine.eclipse.swt.widget.scrollable.ScrollableLayout.lambda$0(ScrollableLayout.java:54)
+	at com.codeaffine.eclipse.swt.widget.scrollable.ScrollableLayout$$Lambda$925/0x000000010093b8a0.run(Unknown Source)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.Reconciliation.runWhileSuspended(Reconciliation.java:62)
+	at com.codeaffine.eclipse.swt.widget.scrollable.ScrollableLayout.layout(ScrollableLayout.java:54)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1335)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1320)
+	at org.eclipse.swt.widgets.Composite.layout(Composite.java:700)
+	at org.eclipse.swt.widgets.Composite.layout(Composite.java:652)
+	at org.eclipse.swt.widgets.Composite.layout(Composite.java:608)
+	at com.codeaffine.eclipse.swt.widget.scrollable.LayoutTrigger.pull(LayoutTrigger.java:24)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.doRun(WatchDog.java:104)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.lambda$0(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog$$Lambda$1019/0x0000000100c87d48.run(Unknown Source)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.Reconciliation.runWhileSuspended(Reconciliation.java:62)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.runWithReconciliationSuspended(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.run(WatchDog.java:91)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4158)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3262)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.debug.ui 4 4 2023-08-30 22:49:16.823
+!MESSAGE To avoid deadlock while executing Display.syncExec() from a non UI thread 'Worker-89: Compute launch button tooltip', operation was cancelled.
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:49:16.823
+!MESSAGE Worker-89: Compute launch button tooltip thread probably holding a lock and trying to acquire UI lock
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread Worker-89: Compute launch button tooltip
+	at java.management@17.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@17.0.1/sun.management.ThreadImpl.getThreadInfo(ThreadImpl.java:485)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.reportTimeout(SelectedResourceManager.java:297)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getFromUI(SelectedResourceManager.java:243)
+	at org.eclipse.debug.internal.ui.stringsubstitution.SelectedResourceManager.getSelectedResource(SelectedResourceManager.java:138)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:238)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$1$1.run(LaunchingResourceManager.java:145)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 120 2023-08-30 22:49:16.823
+!MESSAGE UI thread waiting on a job or lock.
+!STACK 0
+java.lang.IllegalStateException: Call stack for thread main
+	at org.eclipse.swt.internal.win32.OS.ScriptShape(Native Method)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3444)
+	at org.eclipse.swt.graphics.TextLayout.shape(TextLayout.java:3639)
+	at org.eclipse.swt.graphics.TextLayout.computeRuns(TextLayout.java:246)
+	at org.eclipse.swt.graphics.TextLayout.getLineCount(TextLayout.java:1889)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:1270)
+	at org.eclipse.swt.custom.StyledTextRenderer.getTextLayout(StyledTextRenderer.java:908)
+	at org.eclipse.swt.custom.StyledText.computeSize(StyledText.java:1734)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computeSize(ScrollableControl.java:95)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.ScrollableControl.computePreferredSize(ScrollableControl.java:91)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.PreferredSizeProvider.getSize(PreferredSizeProvider.java:35)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.SizeComputer.updatePreferredSize(SizeComputer.java:44)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.AdaptionContext.updatePreferredSize(AdaptionContext.java:106)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.doRun(WatchDog.java:101)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.lambda$0(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog$$Lambda$1019/0x0000000100c87d48.run(Unknown Source)
+	at com.codeaffine.eclipse.swt.widget.scrollable.context.Reconciliation.runWhileSuspended(Reconciliation.java:62)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.runWithReconciliationSuspended(WatchDog.java:97)
+	at com.codeaffine.eclipse.swt.widget.scrollable.WatchDog.run(WatchDog.java:91)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4158)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3262)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.ui.internal.Workbench$$Lambda$288/0x000000010039b4e8.run(Unknown Source)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at app//org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at app//org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.lsp4e 4 0 2023-08-30 22:49:37.878
+!MESSAGE org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+!STACK 0
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$13(LanguageServerWrapper.java:425)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.exec(CompletableFuture.java:1796)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:72)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$4(LanguageServerWrapper.java:260)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.request(RemoteEndpoint.java:161)
+	at org.eclipse.lsp4j.jsonrpc.services.EndpointProxy.invoke(EndpointProxy.java:91)
+	at jdk.proxy11/jdk.proxy11.$Proxy48.shutdown(Unknown Source)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$13(LanguageServerWrapper.java:423)
+	... 7 more
+Caused by: java.io.IOException: The pipe is being closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:349)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
+	... 12 more
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 22:49:38.734
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.InLPyBcz
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 22:49:38.749
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.InLPyBcz
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 22:49:38.755
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-30 22:49:38.762
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.InLPyBcz => OK
+!SESSION 2023-08-31 13:21:29.722 -----------------------------------------------
+eclipse.buildId=4.13.1.202201311654
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2023-08-31 13:22:00.876
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-31 13:22:00.876
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@63f88d35,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2e962cec,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-31 13:22:00.876
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@78543f0d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@10e28d97,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2023-08-31 13:22:03.371
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2023-08-31 13:22:03.371
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:07.113
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:07.115
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@162c3032[org.springframework.tooling.boot.ls:1.30.0.202201310805(id=564)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:07.126
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:07.309
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-08-31 13:22:08.941
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-08-31 13:22:08.942
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-08-31 13:22:09.082
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\SHRIRANG'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.373
+!MESSAGE Boot LS startup time from start to initialized: 8223ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.847
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PSGwljzlisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.854
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.859
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.861
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.863
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.864
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PSGwljzl => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.882
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.894
+!MESSAGE buffering callback sts4.classpath.PSGwljzl CustomerManagement false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.896
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.913
+!MESSAGE classpath=142 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.924
+!MESSAGE buffering callback sts4.classpath.PSGwljzl ApiGateway false 142
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.926
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.940
+!MESSAGE classpath=131 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.949
+!MESSAGE buffering callback sts4.classpath.PSGwljzl DiscoveryServer false 131
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.951
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.959
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.968
+!MESSAGE buffering callback sts4.classpath.PSGwljzl InventoryManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.970
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.984
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:15.996
+!MESSAGE buffering callback sts4.classpath.PSGwljzl JwtAuthentication-1 false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.024
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.046
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.067
+!MESSAGE buffering callback sts4.classpath.PSGwljzl MenuManagement false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.086
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.097
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.104
+!MESSAGE buffering callback sts4.classpath.PSGwljzl OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.107
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.118
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.126
+!MESSAGE buffering callback sts4.classpath.PSGwljzl PaymentManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:16.128
+!MESSAGE executing callback sts4.classpath.PSGwljzl 8 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 13:22:17.502
+!MESSAGE executing callback sts4.classpath.PSGwljzl SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:35:38.897
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.PSGwljzl
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:35:38.916
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.PSGwljzl
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:35:38.917
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:35:38.918
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.PSGwljzl => OK
+
+!ENTRY org.eclipse.ui 4 0 2023-08-31 16:35:41.791
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.springsource.ide.eclipse.commons.ui.launch.LaunchList.getLast()" because "this.launches" is null
+	at org.springsource.ide.eclipse.commons.ui.launch.AbstractLaunchToolbarPulldown.update(AbstractLaunchToolbarPulldown.java:112)
+	at org.springsource.ide.eclipse.commons.ui.launch.AbstractLaunchToolbarPulldown.access$4(AbstractLaunchToolbarPulldown.java:110)
+	at org.springsource.ide.eclipse.commons.ui.launch.AbstractLaunchToolbarPulldown$3.run(AbstractLaunchToolbarPulldown.java:134)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:166)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:368)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:468)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:228)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.disconnectFromWorkspace(IDEWorkbenchAdvisor.java:560)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$2.run(IDEWorkbenchAdvisor.java:367)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.postShutdown(IDEWorkbenchAdvisor.java:388)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:2942)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1124)
+	at org.eclipse.ui.internal.Workbench.lambda$4(Workbench.java:1392)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1392)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1368)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1716)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$5(WorkbenchWindow.java:1743)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1743)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1752)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$2(WorkbenchWindow.java:503)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.lambda$4(WBWRenderer.java:570)
+	at org.eclipse.swt.events.ShellListener$2.shellClosed(ShellListener.java:102)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:102)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:269)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1552)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4755)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:508)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4854)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:508)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4854)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.ui 4 0 2023-08-31 16:35:41.824
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.springsource.ide.eclipse.commons.ui.launch.LaunchList.getLast()" because "this.launches" is null
+	at org.springsource.ide.eclipse.commons.ui.launch.AbstractLaunchToolbarPulldown.update(AbstractLaunchToolbarPulldown.java:112)
+	at org.springsource.ide.eclipse.commons.ui.launch.AbstractLaunchToolbarPulldown.access$4(AbstractLaunchToolbarPulldown.java:110)
+	at org.springsource.ide.eclipse.commons.ui.launch.AbstractLaunchToolbarPulldown$3.run(AbstractLaunchToolbarPulldown.java:134)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:166)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:368)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:468)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:228)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.disconnectFromWorkspace(IDEWorkbenchAdvisor.java:560)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$2.run(IDEWorkbenchAdvisor.java:367)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.postShutdown(IDEWorkbenchAdvisor.java:388)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:2942)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1124)
+	at org.eclipse.ui.internal.Workbench.lambda$4(Workbench.java:1392)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1392)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1368)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1716)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$5(WorkbenchWindow.java:1743)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:74)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1743)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1752)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$2(WorkbenchWindow.java:503)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.lambda$4(WBWRenderer.java:570)
+	at org.eclipse.swt.events.ShellListener$2.shellClosed(ShellListener.java:102)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:102)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:269)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1552)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4755)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:508)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4854)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:508)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4854)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1480)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2286)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5002)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.ui 2 2 2023-08-31 16:35:48.257
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2023-08-31 16:44:00.879 -----------------------------------------------
+eclipse.buildId=4.13.1.202201311654
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2023-08-31 16:44:58.481
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-31 16:44:58.481
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@78d72c9b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22d82fe8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-08-31 16:44:58.481
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2175111e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@74c74c99,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2023-08-31 16:45:02.045
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2023-08-31 16:45:02.046
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:11.988
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:11.990
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5d294aad[org.springframework.tooling.boot.ls:1.30.0.202201310805(id=564)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:12.001
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:12.186
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-08-31 16:45:17.001
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-08-31 16:45:17.025
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-08-31 16:45:17.101
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\SHRIRANG'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:29.126
+!MESSAGE Boot LS startup time from start to initialized: 17076ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.402
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.KYfZHxjlisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.409
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.416
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.422
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.426
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.435
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.KYfZHxjl => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.557
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.574
+!MESSAGE buffering callback sts4.classpath.KYfZHxjl CustomerManagement false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.576
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.889
+!MESSAGE classpath=142 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.900
+!MESSAGE buffering callback sts4.classpath.KYfZHxjl ApiGateway false 142
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:30.904
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.060
+!MESSAGE classpath=131 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.070
+!MESSAGE buffering callback sts4.classpath.KYfZHxjl DiscoveryServer false 131
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.073
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.294
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.299
+!MESSAGE buffering callback sts4.classpath.KYfZHxjl InventoryManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.301
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.322
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.326
+!MESSAGE buffering callback sts4.classpath.KYfZHxjl JwtAuthentication-1 false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.327
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.333
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.338
+!MESSAGE buffering callback sts4.classpath.KYfZHxjl MenuManagement false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.340
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.355
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.362
+!MESSAGE buffering callback sts4.classpath.KYfZHxjl OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.363
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.372
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.378
+!MESSAGE buffering callback sts4.classpath.KYfZHxjl PaymentManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:31.380
+!MESSAGE executing callback sts4.classpath.KYfZHxjl 8 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-08-31 16:45:33.416
+!MESSAGE executing callback sts4.classpath.KYfZHxjl FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2023-08-31 16:45:33.420
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:37)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:00:10.299
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.KYfZHxjl
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:00:10.312
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.KYfZHxjl
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:00:10.335
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:00:10.336
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.KYfZHxjl => OK
+
+!ENTRY org.eclipse.ui 2 2 2023-09-01 12:00:13.118
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2023-09-01 12:44:52.368 -----------------------------------------------
+eclipse.buildId=4.13.1.202201311654
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2023-09-01 12:45:48.056
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-09-01 12:45:48.056
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22d82fe8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2175111e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-09-01 12:45:48.056
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@74c74c99,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@35b5056e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2023-09-01 12:45:50.417
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2023-09-01 12:45:50.417
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:45:58.292
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:45:58.293
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@57010dbc[org.springframework.tooling.boot.ls:1.30.0.202201310805(id=564)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:45:58.305
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:45:58.455
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-09-01 12:46:01.114
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2023-09-01 12:46:01.116
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-09-01 12:46:01.231
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\SHRIRANG'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:10.351
+!MESSAGE Boot LS startup time from start to initialized: 12022ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.428
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vCTumZrqisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.436
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.441
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.443
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.444
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.445
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.vCTumZrq => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.521
+!MESSAGE classpath=145 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.533
+!MESSAGE buffering callback sts4.classpath.vCTumZrq CustomerManagement false 145
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.535
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.671
+!MESSAGE classpath=142 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.680
+!MESSAGE buffering callback sts4.classpath.vCTumZrq ApiGateway false 142
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.683
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.721
+!MESSAGE classpath=131 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.730
+!MESSAGE buffering callback sts4.classpath.vCTumZrq DiscoveryServer false 131
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.732
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.781
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.785
+!MESSAGE buffering callback sts4.classpath.vCTumZrq InventoryManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.786
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.799
+!MESSAGE classpath=81 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.804
+!MESSAGE buffering callback sts4.classpath.vCTumZrq JwtAuthentication-1 false 81
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.806
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.813
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.819
+!MESSAGE buffering callback sts4.classpath.vCTumZrq MenuManagement false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.820
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.828
+!MESSAGE classpath=74 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.834
+!MESSAGE buffering callback sts4.classpath.vCTumZrq OrderManage false 74
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.836
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.844
+!MESSAGE classpath=75 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.849
+!MESSAGE buffering callback sts4.classpath.vCTumZrq PaymentManage false 75
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:11.851
+!MESSAGE executing callback sts4.classpath.vCTumZrq 8 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-09-01 12:46:13.892
+!MESSAGE executing callback sts4.classpath.vCTumZrq FAILED
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2023-09-01 12:46:13.894
+!MESSAGE 
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.springframework.tooling.ls.eclipse.commons.LSP4ECommandExecutor.executeClientCommand(LSP4ECommandExecutor.java:37)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

@@ -103,17 +103,35 @@ public class CustomerController {
 		return ResponseEntity.ok(new AuthenticationResponse(token));
 	}
 
-	@GetMapping("/current-user")
-	public Object getCurrentUser(Authentication authentication) {
-		try{
-			System.out.println("Current user got successfully");
-			return authentication.getPrincipal();
-		} catch(Exception e){
-			System.out.println("Failed to get current user");
-		}
-		System.out.println("current user is running");
-		return authentication;
-	}
+//	@GetMapping("/current-user")
+//	public Object getCurrentUser(Authentication authentication) {
+//		try{
+//			System.out.println("Current user got successfully");
+//			return authentication.getPrincipal();
+//		} catch(Exception e){
+//			System.out.println("Failed to get current user");
+//		}
+//		System.out.println("current user is running");
+//		return authentication;
+//	}
+	
+	 @GetMapping("/current-user")
+	    public String getCurrentUser() {
+		 try {
+			 System.out.println("Get the corrent user successfully");
+	        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+	        if (authentication != null && authentication.isAuthenticated()) {
+	            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+	            String username = userDetails.getUsername();
+	            return "Current User: " + username;
+	        }
+		 } catch(Exception e) {
+			 System.out.println("Failed to get the corrent user");
+		 }
+
+	        return null;
+	    }
 	
 	
 	

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'src/model/menu-item.model';
 import { MenuService } from '../service/menu.service';
 import { OrderService } from '../service/order.service';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-search-menu-name',
@@ -21,7 +22,8 @@ export class SearchMenuNameComponent implements OnInit {
     private menuService: MenuService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private loginService: LoginService
   ) {}
 
 
