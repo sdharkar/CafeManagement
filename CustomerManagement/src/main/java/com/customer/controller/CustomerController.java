@@ -115,24 +115,43 @@ public class CustomerController {
 //		return authentication;
 //	}
 	
-	 @GetMapping("/current-user")
-	    public String getCurrentUser() {
-		 try {
-			 System.out.println("Get the corrent user successfully");
-	        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-	        if (authentication != null && authentication.isAuthenticated()) {
-	            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-	            String username = userDetails.getUsername();
-	            return "Current User: " + username;
-	        }
-		 } catch(Exception e) {
-			 System.out.println("Failed to get the corrent user");
-		 }
-
-	        return null;
-	    }
+//	 @GetMapping("/current-user")
+//	    public String getCurrentUser() {
+//		 try {
+//			 System.out.println("Get the corrent user successfully");
+//	        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//
+//	        if (authentication != null && authentication.isAuthenticated()) {
+//	            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+//	            String username = userDetails.getUsername();
+//	            return "Current User: " + username;
+//	        }
+//		 } catch(Exception e) {
+//			 System.out.println("Failed to get the corrent user");
+//		 }
+//
+//	        return null;
+//	    }
+//	
 	
+	@GetMapping("/current-user")
+    public ResponseEntity<String> getCurrentUser() {
+        try {
+        	 System.out.println("Get the corrent user successfully");
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+            if (authentication != null && authentication.isAuthenticated()) {
+                String username = authentication.getName();
+                return ResponseEntity.ok("Current User: " + username);
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("No authenticated user found.");
+            }
+        } catch (Exception e) {
+        	System.out.println("Failed to get the corrent user");
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error retrieving current user.");
+        }
+    }
 	
 	
 

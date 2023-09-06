@@ -16,7 +16,7 @@ export class MenuService {
   constructor(private http: HttpClient) { } 
 
   //Create MenuItem
-  createMunuItem(menuItem: MenuItem):Observable<MenuItem>{
+  createMenuItem(menuItem: MenuItem):Observable<MenuItem>{
     return this.http.post<MenuItem>(this.baseUrl1, menuItem);
   }
 

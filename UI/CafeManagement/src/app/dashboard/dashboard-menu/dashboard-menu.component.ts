@@ -33,7 +33,7 @@ export class DashboardMenuComponent implements OnInit {
   }
 
   createMenuItem(){
-    this.menuService.createMunuItem(this.menuItem).subscribe(
+    this.menuService.createMenuItem(this.menuItem).subscribe(
       createdItem => {
         console.log(createdItem);
         this.goToDashboard();
