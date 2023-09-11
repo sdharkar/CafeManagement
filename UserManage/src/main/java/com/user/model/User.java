@@ -17,6 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class User implements UserDetails {
 
 	@Id
+	private Integer id;
 	private String username;
 	private String password;
 	private String name;
@@ -31,9 +32,10 @@ public class User implements UserDetails {
 
 	}
 
-	public User(String username, String password, String name, String email, String phone, String address,
+	public User(Integer id, String username, String password, String name, String email, String phone, String address,
 			Set<Role> roles) {
 		super();
+		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.name = name;
@@ -41,6 +43,14 @@ public class User implements UserDetails {
 		this.phone = phone;
 		this.address = address;
 		this.roles = roles;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
@@ -99,46 +109,38 @@ public class User implements UserDetails {
 		this.roles = roles;
 	}
 
-	public void addRole(Role role) {
-		this.roles.add(role);
-	}
-
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        for (Role role : roles) {
-            authorities.add(new SimpleGrantedAuthority(role.getRole()));
-        }
-        return authorities;
+		return null;
 	}
+	
+//	@Override
+//	public String getUsername() {
+//		return this.username;
+//	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
-	public Object getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
 
 }
