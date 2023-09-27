@@ -102,6 +102,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\SHRIRANG\OneDrive\Desktop\TruCrm\TruCrm\user-management-service"/>
+			<item value="C:\Users\SHRIRANG\OneDrive\Desktop\TruCrm\TruCrm\eureka-server"/>
+			<item value="C:\Users\SHRIRANG\OneDrive\Desktop\TruCrm\TruCrm\trucrm_backend"/>
 			<item value="C:\Users\SHRIRANG\Documents\NewProject\DiscoveryServer"/>
 			<item value="C:\Users\SHRIRANG\Documents\NewProject\CustomerManagement"/>
 		</list>
