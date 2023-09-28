@@ -23,7 +23,7 @@ export class OrderSummaryComponent implements OnInit {
     key: 'rzp_test_7PbkU7vlh4agXK',
     amount: 50000,
     currency: 'INR',
-    name: 'TurCrm',
+    name: 'La Cucina',
     description: 'Payment Integration To Place Your Order',
     order_id: '', //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
     handler: function (response: any) {
